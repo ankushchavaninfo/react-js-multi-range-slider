@@ -68,9 +68,11 @@ Check out the [example project](https://github.com/ankushchavaninfo/react-js-mul
 | `max` | Initial maximum value of the slider.<br/>Default value is 1. | number | yes | |
 | `min` | Initial minimum value of the slider.<br/>Default value is 0. | number | yes | |
 | `onChange` | Callback continuously called while the user is dragging the slider. | function | yes | |
-| `step` | Step value of the slider. The value should be between 0 and (maximumValue - minimumValue). Default value is 0 | number | No | |
-| `value` | Write-only property representing the value of the slider. Can be used to programmaticaly controll the position of the thumb. Entered once at the beginning still acts as an initial value. The value should be between minimumValue and maximumValue, which default to 0 and 1 respectively. Default value is 0.<br/>_This is not a controlled component_, you don't need to update the value during dragging. | number | No | | | |
+| `className` | This property used to override the container class Default class is container | string | No | |
+| `title` | This property used to add the slider title | string | No | | | |
 
+<!-- | `step` | Step value of the slider. The value should be between 0 and (maximumValue - minimumValue). Default value is 0 | number | No | |
+| `value` | Write-only property representing the value of the slider. Can be used to programmaticaly controll the position of the thumb. Entered once at the beginning still acts as an initial value. The value should be between minimumValue and maximumValue, which default to 0 and 1 respectively. Default value is 0.<br/>_This is not a controlled component_, you don't need to update the value during dragging. | number | No | |  -->
 ---
 
 ## Browser support

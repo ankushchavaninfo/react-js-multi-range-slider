@@ -17,6 +17,9 @@ const MultiRangeSlider = ({
   min,
   max,
   onChange,
+  className,
+  // step,
+  // value
 }) => {
   const [minVal, set_minVal] = useState(min);
   const [maxVal, set_maxVal] = useState(max);
@@ -73,13 +76,10 @@ const MultiRangeSlider = ({
   }, [minVal, maxVal, onChange]);
 
   return (
-    <>
+    <div className={className || "container"}>
+      <strong>{title}</strong>
+      <br />
       <div>
-        <h1>{title}</h1>
-      </div>
-      <br />
-      <br />
-      <div className="container">
         <input
           type="range"
           min={min}
@@ -116,7 +116,7 @@ const MultiRangeSlider = ({
           <div className="slider__right-value">{maxVal}</div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
@@ -125,6 +125,9 @@ MultiRangeSlider.propTypes = {
   max: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
   title: PropTypes.string,
+  className: PropTypes.string,
+  // step: PropTypes.number,
+  // value: PropTypes.number
 };
 
 export default MultiRangeSlider;
