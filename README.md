@@ -84,11 +84,11 @@ Check out the [example project](https://github.com/ankushchavaninfo/react-js-mul
 
 ---
 
-## Maintainers
+<!-- ## Mentor
 
 - Mr. Mitesh Godhani
 - Mr. Santosh Shinde
-- Mr. Sagar Shinde
+- Mr. Sagar Shinde -->
 
 ---
 
