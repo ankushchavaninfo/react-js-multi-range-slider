@@ -77,6 +77,8 @@ const MultiRangeSlider = ({
       <div>
         <h1>{title}</h1>
       </div>
+      <br />
+      <br />
       <div className="container">
         <input
           type="range"
