@@ -73,44 +73,48 @@ const MultiRangeSlider = ({
   }, [minVal, maxVal, onChange]);
 
   return (
-    <div className="container">
-      <h1>{title}</h1>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        value={minVal}
-        ref={minValRef}
-        onChange={(event) => {
-          const value = Math.min(+event.target.value, maxVal - 1);
-          set_minVal(value);
-          event.target.value = value.toString();
-        }}
-        className={classnames("thumb thumb--zindex-3", {
-          "thumb--zindex-5": minVal > max - 100,
-        })}
-      />
-      <input
-        type="range"
-        min={min}
-        max={max}
-        value={maxVal}
-        ref={maxValRef}
-        onChange={(event) => {
-          const value = Math.max(+event.target.value, minVal + 1);
-          set_maxVal(value);
-          event.target.value = value.toString();
-        }}
-        className="thumb thumb--zindex-4"
-      />
-
-      <div className="slider">
-        <div className="slider__track" />
-        <div ref={range} className="slider__range" />
-        <div className="slider__left-value">{minVal}</div>
-        <div className="slider__right-value">{maxVal}</div>
+    <>
+      <div>
+        <h1>{title}</h1>
       </div>
-    </div>
+      <div className="container">
+        <input
+          type="range"
+          min={min}
+          max={max}
+          value={minVal}
+          ref={minValRef}
+          onChange={(event) => {
+            const value = Math.min(+event.target.value, maxVal - 1);
+            set_minVal(value);
+            event.target.value = value.toString();
+          }}
+          className={classnames("thumb thumb--zindex-3", {
+            "thumb--zindex-5": minVal > max - 100,
+          })}
+        />
+        <input
+          type="range"
+          min={min}
+          max={max}
+          value={maxVal}
+          ref={maxValRef}
+          onChange={(event) => {
+            const value = Math.max(+event.target.value, minVal + 1);
+            set_maxVal(value);
+            event.target.value = value.toString();
+          }}
+          className="thumb thumb--zindex-4"
+        />
+
+        <div className="slider">
+          <div className="slider__track" />
+          <div ref={range} className="slider__range" />
+          <div className="slider__left-value">{minVal}</div>
+          <div className="slider__right-value">{maxVal}</div>
+        </div>
+      </div>
+    </>
   );
 };
 
@@ -118,6 +122,7 @@ MultiRangeSlider.propTypes = {
   min: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
+  title: PropTypes.string,
 };
 
 export default MultiRangeSlider;

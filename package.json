@@ -1,19 +1,19 @@
 {
-  "name": "react-js-multi-range-slider",
-  "version": "1.0.0",
+  "name": "react-js-multi-range-sliders",
+  "version": "0.1.0",
   "author": "Ankush Chavan",
   "license": "ISC",
-  "description": "Multi range slider with react",
+  "description": "Multi range slider with react js",
   "main": "./lib/MultiRangeSlider.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ankush.chavan.info/react-js-multi-range-slider"
+    "url": "https://github.com/ankushchavaninfo/react-js-multi-range-slider"
   },
   "scripts": {
     "build": "webpack"
   },
   "bugs": {
-    "url": "https://github.com/ankush.chavan.info/react-js-multi-range-slider"
+    "url": "https://github.com/ankushchavaninfo/react-js-multi-range-slider/issues"
   },
   "keywords": [
     "react",
