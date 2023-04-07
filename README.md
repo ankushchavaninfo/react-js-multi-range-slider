@@ -109,7 +109,7 @@ cd react-js-multi-range-slider
 
 ## Author
 
-Ankush Chavan 2022, [https://ankushchavan.com](https://ankushchavan.com)
+Ankush Chavan 2022, [https://ankushchavan.info](www.ankushchavan.info)
 
 ---
 
