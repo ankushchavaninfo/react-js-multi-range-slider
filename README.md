@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <strong>License:</strong> ISC
+  <strong>License:</strong> MIT
 </p>
 
 <p align="center">
@@ -211,6 +211,6 @@ npm start
 
 ## License
 
-ISC. See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
 
 ---
