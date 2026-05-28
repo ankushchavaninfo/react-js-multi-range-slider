@@ -1,12 +1,12 @@
 <!-- @format -->
 
 <p align="center">
-  <h1 align="center"> <code>react-js-multi-range-sliders</code> </h1>
+  <h1 align="center"> <code>react-multi-range-slider</code> </h1>
 </p>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/react-js-multi-range-sliders">
-        <img src="https://img.shields.io/npm/v/react-js-multi-range-sliders.svg" alt="Latest version released on npmjs" />
+    <a href="https://www.npmjs.com/package/react-multi-range-slider">
+        <img src="https://img.shields.io/npm/v/react-multi-range-slider.svg" alt="Latest version released on npmjs" />
     </a>
     <a href="https://app.circleci.com/pipelines/github/ankushchavaninfo/react-js-multi-range-slider?branch=main">
         <img src="https://img.shields.io/badge/build-passing-passing.svg" alt="Supported platforms" />
@@ -15,7 +15,7 @@
         <img src="https://img.shields.io/badge/platforms-%20windows%20|%20web-lightgrey.svg" alt="Supported platforms" />
     </a>
     <a href="https://github.com/callstack/react-native-slider/blob/main/LICENSE.md">
-        <img src="https://img.shields.io/npm/l/react-js-multi-range-sliders.svg" alt="License" />
+        <img src="https://img.shields.io/npm/l/react-multi-range-slider.svg" alt="License" />
     </a>
 </p>
 
@@ -36,9 +36,9 @@
 Install into your project:
 
 ```bash
-npm i react-js-multi-range-sliders
+npm i react-multi-range-slider
 # or
-yarn add react-js-multi-range-sliders
+yarn add react-multi-range-slider
 ```
 
 ---
@@ -47,7 +47,7 @@ yarn add react-js-multi-range-sliders
 
 ```jsx
 import React from "react";
-import MultiRangeSlider from "react-js-multi-range-sliders";
+import MultiRangeSlider from "react-multi-range-slider";
 
 const App = () => {
   return (
@@ -70,7 +70,7 @@ Controlled component example (manage values from parent):
 
 ```jsx
 import React, { useState } from "react";
-import MultiRangeSlider from "react-js-multi-range-sliders";
+import MultiRangeSlider from "react-multi-range-slider";
 
 function ControlledExample() {
   const [range, setRange] = useState({ min: 10, max: 80 });
