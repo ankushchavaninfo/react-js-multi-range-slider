@@ -1,5 +1,5 @@
 import React from 'react';
-import { V as VerticalSliderProps } from './types-BizVvSeb.js';
+import { V as VerticalSliderProps } from './types-DRIPRCza.js';
 
 declare const VerticalSlider: React.NamedExoticComponent<VerticalSliderProps>;
 

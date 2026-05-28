@@ -3,8 +3,8 @@ export { default as RangeSlider } from './RangeSlider.mjs';
 export { default as VerticalSlider } from './VerticalSlider.mjs';
 export { default as MultiPointSlider } from './MultiPointSlider.mjs';
 export { default as CircularSlider } from './CircularSlider.mjs';
-import { a as MultiRangeSliderProps } from './types-BizVvSeb.mjs';
-export { B as BaseSliderProps, C as CircularSliderProps, D as Direction, L as LegacySingleSliderProps, M as MultiPointSliderProps, b as MultiRangeSliderValue, c as MultiSliderProps, R as RangeSliderProps, d as RangeValue, S as SingleSliderProps, T as Theme, V as VerticalSliderProps } from './types-BizVvSeb.mjs';
+import { a as MultiRangeSliderProps } from './types-DRIPRCza.mjs';
+export { B as BaseSliderProps, C as CircularSliderProps, D as Direction, L as LegacySingleSliderProps, M as MultiPointSliderProps, b as MultiRangeSliderValue, c as MultiSliderProps, R as RangeSliderProps, d as RangeValue, S as SingleSliderProps, T as Theme, V as VerticalSliderProps } from './types-DRIPRCza.mjs';
 import React from 'react';
 
 /**

@@ -1,5 +1,5 @@
 import React from 'react';
-import { C as CircularSliderProps } from './types-BizVvSeb.js';
+import { C as CircularSliderProps } from './types-DRIPRCza.js';
 
 declare const CircularSlider: React.NamedExoticComponent<CircularSliderProps>;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { M as MultiPointSliderProps } from './types-BizVvSeb.mjs';
+import { M as MultiPointSliderProps } from './types-DRIPRCza.mjs';
 
 declare const MultiPointSlider: React.NamedExoticComponent<MultiPointSliderProps>;
 

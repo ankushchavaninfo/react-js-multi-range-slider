@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.1.0...v1.2.0) (2026-05-28)
+
+
+### Features
+
+* **sliders:** tooltip collision resolution + scale ruler/labels ([be74171](https://github.com/ankushchavaninfo/react-js-multi-range-slider/commit/be74171aca5efec76a8dc8c2af791b7593b02363))
+
 # [1.1.0](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.0.2...v1.1.0) (2026-05-28)
 
 
