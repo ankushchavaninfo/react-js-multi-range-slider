@@ -8,13 +8,13 @@
     <a href="https://www.npmjs.com/package/react-multi-range-slider">
         <img src="https://img.shields.io/npm/v/react-multi-range-slider.svg" alt="Latest version released on npmjs" />
     </a>
-    <a href="https://github.com/ankushchavan0411/react-js-multi-range-slider">
+    <a href="https://github.com/ankushchavaninfo/react-js-multi-range-slider">
         <img src="https://img.shields.io/badge/build-passing-passing.svg" alt="Supported platforms" />
     </a>
-    <a href="https://github.com/ankushchavan0411/react-js-multi-range-slider">
+    <a href="https://github.com/ankushchavaninfo/react-js-multi-range-slider">
         <img src="https://img.shields.io/badge/platforms-%20windows%20|%20web-lightgrey.svg" alt="Supported platforms" />
     </a>
-    <a href="https://github.com/ankushchavan0411/react-js-multi-range-slider/blob/main/LICENSE">
+    <a href="https://github.com/ankushchavaninfo/react-js-multi-range-slider/blob/main/LICENSE">
         <img src="https://img.shields.io/npm/l/react-multi-range-slider.svg" alt="License" />
     </a>
 </p>
@@ -47,7 +47,7 @@ yarn add react-multi-range-slider
 
 Try the package in CodeSandbox:
 
-[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/ankushchavan0411/react-js-multi-range-slider/tree/main/sandbox)
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/ankushchavaninfo/react-js-multi-range-slider/tree/main/sandbox)
 
 The sandbox uses the published npm package:
 
@@ -180,7 +180,7 @@ This component supports the following props:
 Clone, install and build locally:
 
 ```bash
-git clone https://github.com/ankushchavan0411/react-js-multi-range-slider.git
+git clone https://github.com/ankushchavaninfo/react-js-multi-range-slider.git
 cd react-js-multi-range-slider
 npm install
 npm run build
@@ -193,7 +193,7 @@ Run the examples in a small CRA or Next app by importing the built lib or using 
 ## Author & Links
 
 - Website: https://www.ankushchavan.in/
-- Repository: https://github.com/ankushchavan0411/react-js-multi-range-slider
+- Repository: https://github.com/ankushchavaninfo/react-js-multi-range-slider
 
 ---
 
