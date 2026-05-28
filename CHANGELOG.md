@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.2.2...v1.2.3) (2026-05-28)
+
+
+### Bug Fixes
+
+* **example:** sidebar full-width layout and thin scrollbar styling ([3e0026d](https://github.com/ankushchavaninfo/react-js-multi-range-slider/commit/3e0026df1f7bcc818d724259eb5fefb842764da9))
+
 ## [1.2.2](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.2.1...v1.2.2) (2026-05-28)
 
 
