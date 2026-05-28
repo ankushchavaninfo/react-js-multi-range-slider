@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useCallback, useMemo, useState } from "react";
-import MultiRangeSlider from "react-multi-range-slider";
+import MultiRangeSlider from "react-js-multi-range-sliders";
 import "./App.css";
 
 const examples = [
@@ -125,7 +125,7 @@ export default function App() {
   }, []);
 
   const installCommand = useMemo(
-    () => "npm install react-multi-range-slider",
+    () => "npm install react-js-multi-range-sliders",
     [],
   );
 
@@ -134,7 +134,7 @@ export default function App() {
       <section className="hero-section">
         <div className="hero-content">
           <p className="eyebrow">React component</p>
-          <h1>react-multi-range-slider</h1>
+          <h1>react-js-multi-range-sliders</h1>
           <p className="hero-text">
             A dual-thumb range slider for prices, filters, schedules, ratings,
             and accessible form controls.
@@ -178,7 +178,7 @@ export default function App() {
         </div>
         <CodeBlock>{`${installCommand}
 
-import MultiRangeSlider from "react-multi-range-slider";`}</CodeBlock>
+import MultiRangeSlider from "react-js-multi-range-sliders";`}</CodeBlock>
       </section>
 
       <div className="examples-layout" id="examples">
