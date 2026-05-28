@@ -45,11 +45,11 @@ yarn add react-multi-range-slider
 
 ## Open Example
 
-Try the package in CodeSandbox:
+Try the CRA example app in CodeSandbox:
 
-[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/ankushchavaninfo/react-js-multi-range-slider/tree/main/sandbox)
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/ankushchavaninfo/react-js-multi-range-slider/tree/main/example)
 
-The sandbox uses the published npm package:
+The example app uses the published npm package:
 
 ```jsx
 import MultiRangeSlider from "react-multi-range-slider";
@@ -186,7 +186,13 @@ npm install
 npm run build
 ```
 
-Run the examples in a small CRA or Next app by importing the built lib or using the local `src` implementation.
+Run the CRA example app:
+
+```bash
+cd example
+npm install
+npm start
+```
 
 ---
 
@@ -199,6 +205,6 @@ Run the examples in a small CRA or Next app by importing the built lib or using 
 
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE).
 
 ---
