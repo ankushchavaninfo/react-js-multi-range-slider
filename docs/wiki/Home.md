@@ -136,6 +136,12 @@ npm start
 
 Contributions are welcome. Please keep changes focused, run the build before opening a pull request, and update documentation when behavior or props change.
 
+## Author & Links
+
+- Name: Ankush Chavan
+- Website: https://www.ankushchavan.in/
+- Repository: https://github.com/ankushchavaninfo/react-js-multi-range-slider
+
 ## License
 
 MIT. See [LICENSE](../../LICENSE).

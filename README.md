@@ -204,6 +204,7 @@ npm start
 
 ## Author & Links
 
+- Name: Ankush Chavan
 - Website: https://www.ankushchavan.in/
 - Repository: https://github.com/ankushchavaninfo/react-js-multi-range-slider
 
