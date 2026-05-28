@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.0.1...v1.0.2) (2026-05-28)
+
+
+### Bug Fixes
+
+* **ci:** disable auto npm publish, no NPM_TOKEN needed ([6b012bf](https://github.com/ankushchavaninfo/react-js-multi-range-slider/commit/6b012bfb1f24498599bad24aec82037ebbdf2850))
+
 ## [1.0.1](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.0.0...v1.0.1) (2026-05-28)
 
 
