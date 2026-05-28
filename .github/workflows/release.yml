@@ -1,11 +1,9 @@
 name: Release
 
 # Fires every time a commit lands on main (i.e. a PR is merged).
-# semantic-release reads commits since the last tag, bumps the version,
-# writes CHANGELOG.md, creates a git tag, and creates a GitHub Release.
-#
-# npm publish is disabled (npmPublish: false in .releaserc.json).
-# Run `npm publish` manually when you want to publish to npm.
+# semantic-release bumps the version, writes CHANGELOG.md, creates a git
+# tag, creates a GitHub Release, and publishes to npm via OIDC Trusted
+# Publishing (no NPM_TOKEN secret needed).
 #
 # Commit-type → version bump rules (Conventional Commits):
 #   fix:              → patch   (1.0.0 → 1.0.1)
@@ -23,6 +21,7 @@ permissions:
   contents: write       # create tags + commits
   issues: write         # comment on issues
   pull-requests: write  # comment on PRs
+  id-token: write       # OIDC token for npm Trusted Publishing
 
 jobs:
   release:
@@ -33,13 +32,14 @@ jobs:
       - name: Checkout (full history for semantic-release)
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0          # needs full history to find last tag
+          fetch-depth: 0
           persist-credentials: false
 
       - name: Set up Node.js 22
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          registry-url: "https://registry.npmjs.org"
           cache: npm
 
       - name: Install dependencies
@@ -51,4 +51,5 @@ jobs:
       - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_CONFIG_PROVENANCE: "true"
         run: npx semantic-release

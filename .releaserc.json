@@ -9,7 +9,7 @@
     ],
     [
       "@semantic-release/npm",
-      { "npmPublish": false, "pkgRoot": "." }
+      { "npmPublish": true, "pkgRoot": "." }
     ],
     [
       "@semantic-release/exec",
