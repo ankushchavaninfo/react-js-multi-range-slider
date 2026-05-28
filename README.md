@@ -1,6 +1,10 @@
 <!-- @format -->
 
 <p align="center">
+  <img src="docs/images/logo.svg" alt="react-js-multi-range-sliders logo" width="96" height="96"/>
+</p>
+
+<p align="center">
   <img src="docs/images/banner.svg" alt="react-js-multi-range-sliders — 5 slider types, 4 themes, TypeScript, zero deps" width="768"/>
 </p>
 
