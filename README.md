@@ -8,13 +8,13 @@
     <a href="https://www.npmjs.com/package/react-multi-range-slider">
         <img src="https://img.shields.io/npm/v/react-multi-range-slider.svg" alt="Latest version released on npmjs" />
     </a>
-    <a href="https://app.circleci.com/pipelines/github/ankushchavaninfo/react-js-multi-range-slider?branch=main">
+    <a href="https://github.com/ankushchavaninfo/react-js-multi-range-slider">
         <img src="https://img.shields.io/badge/build-passing-passing.svg" alt="Supported platforms" />
     </a>
-    <a href="https://github.com/ankushchavaninfo/react-js-multi-range-sliders">
+    <a href="https://github.com/ankushchavaninfo/react-js-multi-range-slider">
         <img src="https://img.shields.io/badge/platforms-%20windows%20|%20web-lightgrey.svg" alt="Supported platforms" />
     </a>
-    <a href="https://github.com/callstack/react-native-slider/blob/main/LICENSE.md">
+    <a href="https://github.com/ankushchavaninfo/react-js-multi-range-slider/blob/main/LICENSE">
         <img src="https://img.shields.io/npm/l/react-multi-range-slider.svg" alt="License" />
     </a>
 </p>
@@ -43,7 +43,23 @@ yarn add react-multi-range-slider
 
 ---
 
-## Quick start — Basic usage
+## Open Example
+
+Try the CRA example app in CodeSandbox:
+
+<a href="https://codesandbox.io/s/github/ankushchavaninfo/react-js-multi-range-slider/tree/main/example" target="_blank" rel="noopener noreferrer">
+  <img alt="Open in CodeSandbox" src="https://codesandbox.io/static/img/play-codesandbox.svg" />
+</a>
+
+The example app uses the published npm package:
+
+```jsx
+import MultiRangeSlider from "react-multi-range-slider";
+```
+
+---
+
+## Quick start - Basic usage
 
 ```jsx
 import React from "react";
@@ -161,24 +177,6 @@ This component supports the following props:
 
 ---
 
-## How to add images to README
-
-1. If you want local images in the repository, create a folder such as `docs/images` and commit images there. Reference them with a relative path in Markdown:
-
-```markdown
-![Example screenshot](docs/images/slider-example.png)
-```
-
-2. Or use hosted images (CDN or your website). Example using a URL:
-
-```markdown
-![Live demo on site](https://www.ankushchavan.in/path/to/image.png)
-```
-
-3. For package README on npm, make sure images are either remote URLs or included in the published package (update `files` in `package.json` if needed).
-
----
-
 ## Development / Contributing
 
 Clone, install and build locally:
@@ -190,7 +188,13 @@ npm install
 npm run build
 ```
 
-Run the examples in a small CRA or Next app by importing the built lib or using the local `src` implementation.
+Run the CRA example app:
+
+```bash
+cd example
+npm install
+npm start
+```
 
 ---
 
@@ -203,6 +207,6 @@ Run the examples in a small CRA or Next app by importing the built lib or using 
 
 ## License
 
-ISC
+MIT. See [LICENSE](LICENSE).
 
 ---
