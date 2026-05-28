@@ -47,7 +47,9 @@ yarn add react-multi-range-slider
 
 Try the CRA example app in CodeSandbox:
 
-[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/ankushchavaninfo/react-js-multi-range-slider/tree/main/example)
+<a href="https://codesandbox.io/s/github/ankushchavaninfo/react-js-multi-range-slider/tree/main/example" target="_blank" rel="noopener noreferrer">
+  <img alt="Open in CodeSandbox" src="https://codesandbox.io/static/img/play-codesandbox.svg" />
+</a>
 
 The example app uses the published npm package:
 
