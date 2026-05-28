@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.2.1...v1.2.2) (2026-05-28)
+
+
+### Bug Fixes
+
+* **tooltip:** resolve thumb/tooltip overlap when showTooltip is enabled ([b00dc53](https://github.com/ankushchavaninfo/react-js-multi-range-slider/commit/b00dc535d72987d5e730b5d4a01018bf7adfb53d))
+
 ## [1.2.1](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.2.0...v1.2.1) (2026-05-28)
 
 
