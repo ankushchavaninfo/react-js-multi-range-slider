@@ -6,6 +6,7 @@
   "description": "Multi range slider with react js",
   "homepage": "https://www.ankushchavan.in/",
   "main": "./lib/MultiRangeSlider.js",
+  "exports": "./lib/MultiRangeSlider.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ankushchavaninfo/react-js-multi-range-slider"
@@ -34,8 +35,8 @@
   ],
   "files": [
     "lib",
-    "src",
     "docs",
+    "LICENSE",
     "README.md"
   ],
   "peerDependencies": {
