@@ -2,16 +2,16 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
-  entry: "./src/MultiRangeSlider.js",
+  entry: "./src/index.ts",
   output: {
     path: path.resolve("lib"),
-    filename: "MultiRangeSlider.js",
+    filename: "index.js",
     libraryTarget: "commonjs2",
   },
   module: {
     rules: [
       {
-        test: /\.js?$/,
+        test: /\.(js|ts|tsx)$/,
         exclude: /(node_modules)/,
         use: "babel-loader",
       },
@@ -22,13 +22,13 @@ module.exports = {
     ],
   },
   resolve: {
+    extensions: [".tsx", ".ts", ".js"],
     alias: {
       react: path.resolve(__dirname, "./node_modules/react"),
       "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
     },
   },
   externals: {
-    // Don't bundle react or react-dom
     react: {
       commonjs: "react",
       commonjs2: "react",
