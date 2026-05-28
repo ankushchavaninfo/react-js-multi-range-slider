@@ -27,8 +27,12 @@
 </p>
 
 <p align="center">
+  <a href="https://f35rfp.csb.app/" target="_blank" rel="noopener noreferrer">
+    <img alt="Live Preview" src="https://img.shields.io/badge/Live%20Preview-f35rfp.csb.app-2563eb?style=for-the-badge&logo=codesandbox&logoColor=white" height="36"/>
+  </a>
+  &nbsp;
   <a href="https://codesandbox.io/s/github/ankushchavaninfo/react-js-multi-range-slider/tree/main/example" target="_blank" rel="noopener noreferrer">
-    <img alt="Open in CodeSandbox" src="https://codesandbox.io/static/img/play-codesandbox.svg" height="32"/>
+    <img alt="Open in CodeSandbox" src="https://codesandbox.io/static/img/play-codesandbox.svg" height="36"/>
   </a>
 </p>
 
@@ -587,11 +591,17 @@ import MultiRangeSlider from "react-js-multi-range-sliders";
 
 ## Live demo
 
-Try all five components in the browser:
+Try all five components — RangeSlider, SingleSlider, VerticalSlider, MultiPointSlider, CircularSlider — plus the Scale Slider examples, in the browser:
 
-<a href="https://codesandbox.io/s/github/ankushchavaninfo/react-js-multi-range-slider/tree/main/example" target="_blank" rel="noopener noreferrer">
-  <img alt="Open in CodeSandbox" src="https://codesandbox.io/static/img/play-codesandbox.svg" height="32"/>
-</a>
+<p>
+  <a href="https://f35rfp.csb.app/" target="_blank" rel="noopener noreferrer">
+    <img alt="Live Preview" src="https://img.shields.io/badge/Live%20Preview-f35rfp.csb.app-2563eb?style=for-the-badge&logo=codesandbox&logoColor=white" height="36"/>
+  </a>
+  &nbsp;
+  <a href="https://codesandbox.io/s/github/ankushchavaninfo/react-js-multi-range-slider/tree/main/example" target="_blank" rel="noopener noreferrer">
+    <img alt="Open in CodeSandbox" src="https://codesandbox.io/static/img/play-codesandbox.svg" height="36"/>
+  </a>
+</p>
 
 ---
 
