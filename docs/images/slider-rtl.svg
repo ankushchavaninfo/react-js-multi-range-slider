@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="120" viewBox="0 0 720 120">
+  <rect width="720" height="120" fill="#fff"/>
+  <rect x="60" y="50" width="600" height="8" rx="4" fill="#e9ecef"/>
+  <rect x="220" y="50" width="120" height="8" rx="4" fill="#ffc107"/>
+  <circle cx="220" cy="54" r="10" fill="#fff" stroke="#dc3545" stroke-width="2"/>
+  <circle cx="340" cy="54" r="10" fill="#fff" stroke="#dc3545" stroke-width="2"/>
+  <text x="216" y="86" font-size="12" fill="#333">40</text>
+  <text x="336" y="86" font-size="12" fill="#333">60</text>
+  <text x="360" y="24" font-size="12" fill="#333">RTL mode</text>
+</svg>
