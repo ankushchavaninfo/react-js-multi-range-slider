@@ -141,6 +141,9 @@ function PriceFilter() {
 | `labelStyle` | `CSSProperties` | — | Inline style for labels |
 | `ariaLabelMin` | `string` | `"Minimum value"` | ARIA label, min thumb |
 | `ariaLabelMax` | `string` | `"Maximum value"` | ARIA label, max thumb |
+| `labels` | `string[]` | — | Evenly-spaced tick labels (e.g. day or month names) |
+| `ruler` | `boolean` | `true` when `labels` set | Show ruler tick marks below the track |
+| `subSteps` | `boolean \| number` | `false` | Minor ticks between major ticks (`true` = 3) |
 
 ---
 
@@ -165,7 +168,7 @@ import { SingleSlider } from "react-js-multi-range-sliders";
 />
 ```
 
-Same base props as `RangeSlider`. Additional prop:
+Same base props as `RangeSlider` (including `labels`, `ruler`, `subSteps`). Additional prop:
 
 | Prop | Type | Default | Description |
 |---|---|---|---|
@@ -291,6 +294,155 @@ import { CircularSlider } from "react-js-multi-range-sliders";
 | `ariaLabel` | `string` | `"Circular slider"` | ARIA label |
 | `onChangeStart` | `(v: number) => void` | — | Fires on pointer-down |
 | `onChangeComplete` | `(v: number) => void` | — | Fires on pointer-up |
+
+---
+
+## Scale Slider — ruler, labels & subSteps
+
+`RangeSlider` and `SingleSlider` both support an optional ruler (tick marks) and an
+evenly-spaced label row below the track.
+
+<p align="center">
+  <img src="docs/images/demo-scale-simple.svg"   alt="Simple range with ruler" width="640"/><br/>
+  <img src="docs/images/demo-scale-weekdays.svg"  alt="Week-day labels" width="640"/><br/>
+  <img src="docs/images/demo-scale-daterange.svg" alt="Month labels for date range" width="640"/><br/>
+  <img src="docs/images/demo-scale-timerange.svg" alt="Time range with subSteps minor ticks" width="640"/><br/>
+  <img src="docs/images/demo-scale-negative.svg"  alt="Negative-to-positive range" width="640"/><br/>
+  <img src="docs/images/demo-scale-steponly.svg"  alt="Step-snapping range" width="640"/>
+</p>
+
+### Props
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `ruler` | `boolean` | `true` when `labels` set | Render tick marks below the track |
+| `labels` | `string[]` | — | Array of label strings placed at evenly-spaced positions |
+| `subSteps` | `boolean \| number` | `false` | Minor ticks between each pair of major ticks. `true` = 3 minor ticks (4 sub-divisions); any `number` uses that count explicitly |
+
+### Examples
+
+**1. Simple range with auto ruler**
+
+```tsx
+<RangeSlider
+  min={0} max={100}
+  defaultValue={{ min: 25, max: 75 }}
+  onChange={setRange}
+  ruler
+  showLabels
+/>
+```
+
+The `ruler` prop auto-generates up to 20 evenly-spaced major ticks based on
+`Math.min(20, (max - min) / step)`.
+
+---
+
+**2. Week-day range with named labels**
+
+```tsx
+const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+<RangeSlider
+  min={0} max={6} step={1}
+  defaultValue={{ min: 1, max: 5 }}
+  onChange={setWeekRange}
+  labels={DAYS}
+  formatLabel={(v) => DAYS[v]}   // tooltip and value display
+  showTooltip
+  showLabels={false}             // hide redundant number labels
+/>
+```
+
+`labels` sets both the ruler tick count and the text shown below each tick.
+Pair it with `formatLabel` to customise the tooltip / current-value text.
+
+---
+
+**3. Date range with month markers**
+
+```tsx
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun",
+                "Jul","Aug","Sep","Oct","Nov","Dec"];
+
+<RangeSlider
+  min={0} max={365}
+  defaultValue={{ min: 22, max: 364 }}
+  onChange={setDateRange}
+  labels={MONTHS}
+  formatLabel={(v) => {
+    const date = new Date(2022, 0, v + 1);
+    return date.toLocaleDateString("en-GB", { day:"numeric", month:"short" });
+  }}
+  showTooltip
+  showLabels={false}
+/>
+```
+
+---
+
+**4. Time range with sub-step minor ticks**
+
+```tsx
+const HOURS = Array.from({ length: 13 }, (_, i) =>
+  String(i).padStart(2, "0") + ":00"
+);
+
+const fmtTime = (v: number) => {
+  const h = Math.floor(v / 60);
+  const m = v % 60;
+  return `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}`;
+};
+
+<RangeSlider
+  min={0} max={719} step={1}
+  defaultValue={{ min: 619, max: 719 }}
+  onChange={setTimeRange}
+  labels={HOURS}
+  subSteps={true}          // 3 minor ticks per section = 15-min intervals
+  formatLabel={fmtTime}
+  showTooltip
+  showLabels={false}
+/>
+```
+
+`subSteps={true}` inserts 3 minor ticks (default) between each pair of major ticks.
+Pass a number to use a custom count, e.g. `subSteps={1}` for half-way ticks.
+
+---
+
+**5. Negative / positive range**
+
+```tsx
+<RangeSlider
+  min={-1} max={1} step={0.1}
+  defaultValue={{ min: -0.5, max: 0.5 }}
+  onChange={setRange}
+  ruler
+  showLabels
+  formatLabel={(v) => v.toFixed(1)}
+/>
+```
+
+The ruler works across negative ranges. `step={0.1}` → 20 auto major ticks.
+
+---
+
+**6. Step-snapping range**
+
+```tsx
+<RangeSlider
+  min={0} max={100} step={5}
+  defaultValue={{ min: 30, max: 60 }}
+  onChange={setRange}
+  ruler
+  showLabels
+/>
+```
+
+The ruler tick count adjusts to the step size automatically:
+`sections = Math.min(20, (100 - 0) / 5)` = 20 sections → 21 ticks at 0, 5, 10 … 100.
+Native `<input type="range" step="5">` enforces the snapping.
 
 ---
 

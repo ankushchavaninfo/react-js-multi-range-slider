@@ -74,6 +74,14 @@ export default function App() {
   const [progress, setProgress] = useState(65);
   const [knob, setKnob]         = useState(300);
 
+  /* Scale / ruler demo states */
+  const [simpleRange,   setSimpleRange]   = useState({ min: 25, max: 75 });
+  const [weekRange,     setWeekRange]     = useState({ min: 1,  max: 5  });
+  const [dateRange,     setDateRange]     = useState({ min: 22, max: 364 });
+  const [timeRange,     setTimeRange]     = useState({ min: 619, max: 719 });
+  const [negRange,      setNegRange]      = useState({ min: -0.5, max: 0.5 });
+  const [stepRange,     setStepRange]     = useState({ min: 30, max: 60 });
+
   /* Theme demo states */
   const [tDefault,  setTDefault]  = useState({ min: 25, max: 75 });
   const [tMaterial, setTMaterial] = useState({ min: 20, max: 80 });
@@ -684,6 +692,247 @@ import RangeSlider from "react-js-multi-range-sliders/RangeSlider";`}
   theme="neumorphic"  // "default" | "material" | "neumorphic" | "dark"
 />`}</CodeBlock>
         </section>
+      </div>
+
+      {/* ══════════════════════════════════════════════════════════
+          SCALE SLIDER — ruler + labels + subSteps
+      ══════════════════════════════════════════════════════════ */}
+      <div className="examples-layout" id="scale-slider">
+        <SectionHeader
+          tag="Feature"
+          title="Scale Slider"
+          description="Add a ruler and/or evenly-spaced labels below any slider using the labels, ruler, and subSteps props."
+        />
+
+        {/* 1 ── Simple range with auto ruler */}
+        <DemoSection
+          id="scale-simple"
+          title="Simple range slider with default values"
+          description="ruler automatically generates 20 evenly-spaced tick marks. No custom labels needed."
+          meta={<strong>onInput: &nbsp;{simpleRange.min} &nbsp; {simpleRange.max}</strong>}
+          code={`<RangeSlider
+  min={0} max={100}
+  defaultValue={{ min: 25, max: 75 }}
+  onChange={setSimpleRange}
+  ruler
+  showLabels
+/>`}
+        >
+          <RangeSlider
+            min={0} max={100}
+            defaultValue={{ min: 25, max: 75 }}
+            onChange={setSimpleRange}
+            ruler
+            showLabels
+            trackColor="#dde3ea"
+            rangeColor="#4a9a4a"
+            thumbColor="#ffffff"
+            style={{ width: "100%" }}
+          />
+        </DemoSection>
+
+        {/* 2 ── Week days */}
+        <DemoSection
+          id="scale-weekdays"
+          title="Range slider for week days"
+          description="Provide a labels array to render named tick positions. formatLabel maps the index to its label."
+          meta={<strong>onInput: &nbsp;{weekRange.min}:{["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][weekRange.min]} &nbsp; {weekRange.max}:{["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][weekRange.max]}</strong>}
+          code={`const DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+<RangeSlider
+  min={0} max={6} step={1}
+  defaultValue={{ min: 1, max: 5 }}
+  onChange={setWeekRange}
+  labels={DAYS}
+  formatLabel={(v) => DAYS[v]}
+  showTooltip
+  showLabels={false}
+/>`}
+        >
+          {(() => {
+            const DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+            return (
+              <RangeSlider
+                min={0} max={6} step={1}
+                defaultValue={{ min: 1, max: 5 }}
+                onChange={setWeekRange}
+                labels={DAYS}
+                formatLabel={(v) => DAYS[v]}
+                showTooltip
+                showLabels={false}
+                trackColor="#dde3ea"
+                rangeColor="#4a9a4a"
+                thumbColor="#ffffff"
+                style={{ width: "100%" }}
+              />
+            );
+          })()}
+        </DemoSection>
+
+        {/* 3 ── Date range */}
+        <DemoSection
+          id="scale-daterange"
+          title="Range slider for date range"
+          description="Month labels with a custom formatLabel that converts a day-of-year index to a human-readable date."
+          meta={<strong>onInput: &nbsp;{dateRange.min} &nbsp; {dateRange.max}</strong>}
+          code={`const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun",
+                 "Jul","Aug","Sep","Oct","Nov","Dec"];
+
+// Simple day-of-year → month label helper
+const dayLabel = (d) => {
+  const mDays = [31,31,28,31,30,31,30,31,31,30,31,30,31];
+  let acc = 0;
+  for (let m = 0; m < 12; m++) {
+    acc += mDays[m];
+    if (d <= acc) return MONTHS[m];
+  }
+  return "Dec";
+};
+
+<RangeSlider
+  min={0} max={365}
+  defaultValue={{ min: 22, max: 364 }}
+  onChange={setDateRange}
+  labels={MONTHS}
+  formatLabel={dayLabel}
+  showTooltip
+  showLabels={false}
+/>`}
+        >
+          {(() => {
+            const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+            const mDays  = [31,31,28,31,30,31,30,31,31,30,31,30,31];
+            const dayLabel = (d) => {
+              let acc = 0;
+              for (let m = 0; m < 12; m++) { acc += mDays[m]; if (d <= acc) return MONTHS[m]; }
+              return "Dec";
+            };
+            return (
+              <RangeSlider
+                min={0} max={365}
+                defaultValue={{ min: 22, max: 364 }}
+                onChange={setDateRange}
+                labels={MONTHS}
+                formatLabel={dayLabel}
+                showTooltip
+                showLabels={false}
+                trackColor="#dde3ea"
+                rangeColor="#4a9a4a"
+                thumbColor="#ffffff"
+                style={{ width: "100%" }}
+              />
+            );
+          })()}
+        </DemoSection>
+
+        {/* 4 ── Time range with subSteps */}
+        <DemoSection
+          id="scale-time"
+          title="Time-Range with subSteps"
+          description="subSteps={true} inserts 3 minor ticks between each hour label (15-minute intervals)."
+          meta={<strong>onInput: &nbsp;{Math.floor(timeRange.min/60)}:{String(timeRange.min%60).padStart(2,"0")} &nbsp; {Math.floor(timeRange.max/60)}:{String(timeRange.max%60).padStart(2,"0")}</strong>}
+          code={`const HOURS = Array.from({ length: 13 }, (_, i) =>
+  String(i).padStart(2,"0") + ":00"
+);
+
+const fmtTime = (v) => {
+  const h = Math.floor(v / 60);
+  const m = v % 60;
+  return \`\${String(h).padStart(2,"0")}:\${String(m).padStart(2,"0")}\`;
+};
+
+<RangeSlider
+  min={0} max={719} step={1}
+  defaultValue={{ min: 619, max: 719 }}
+  onChange={setTimeRange}
+  labels={HOURS}
+  subSteps={true}
+  formatLabel={fmtTime}
+  showTooltip
+  showLabels={false}
+/>`}
+        >
+          {(() => {
+            const HOURS = Array.from({ length: 13 }, (_, i) => String(i).padStart(2,"0") + ":00");
+            const fmtTime = (v) => {
+              const h = Math.floor(v / 60);
+              const m = v % 60;
+              return `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}`;
+            };
+            return (
+              <RangeSlider
+                min={0} max={719} step={1}
+                defaultValue={{ min: 619, max: 719 }}
+                onChange={setTimeRange}
+                labels={HOURS}
+                subSteps={true}
+                formatLabel={fmtTime}
+                showTooltip
+                showLabels={false}
+                trackColor="#dde3ea"
+                rangeColor="#4a9a4a"
+                thumbColor="#ffffff"
+                style={{ width: "100%" }}
+              />
+            );
+          })()}
+        </DemoSection>
+
+        {/* 5 ── Negative / positive range */}
+        <DemoSection
+          id="scale-negative"
+          title="Negative and positive range"
+          description="The ruler works across negative ranges. step={0.1} gives 20 auto ticks between -1 and 1."
+          meta={<strong>onInput: &nbsp;{negRange.min.toFixed(1)} &nbsp; {negRange.max.toFixed(1)}</strong>}
+          code={`<RangeSlider
+  min={-1} max={1} step={0.1}
+  defaultValue={{ min: -0.5, max: 0.5 }}
+  onChange={setNegRange}
+  ruler
+  showLabels
+  formatLabel={(v) => v.toFixed(1)}
+/>`}
+        >
+          <RangeSlider
+            min={-1} max={1} step={0.1}
+            defaultValue={{ min: -0.5, max: 0.5 }}
+            onChange={setNegRange}
+            ruler
+            showLabels
+            formatLabel={(v) => v.toFixed(1)}
+            trackColor="#dde3ea"
+            rangeColor="#4a9a4a"
+            thumbColor="#ffffff"
+            style={{ width: "100%" }}
+          />
+        </DemoSection>
+
+        {/* 6 ── Step-only snapping */}
+        <DemoSection
+          id="scale-steponly"
+          title="Range slider with step snapping"
+          description="step={5} snaps the thumbs to multiples of 5. The ruler tick count auto-adjusts to the step size."
+          meta={<strong>onInput: &nbsp;{stepRange.min} &nbsp; {stepRange.max}</strong>}
+          code={`<RangeSlider
+  min={0} max={100} step={5}
+  defaultValue={{ min: 30, max: 60 }}
+  onChange={setStepRange}
+  ruler
+  showLabels
+/>`}
+        >
+          <RangeSlider
+            min={0} max={100} step={5}
+            defaultValue={{ min: 30, max: 60 }}
+            onChange={setStepRange}
+            ruler
+            showLabels
+            trackColor="#dde3ea"
+            rangeColor="#4a9a4a"
+            thumbColor="#ffffff"
+            style={{ width: "100%" }}
+          />
+        </DemoSection>
       </div>
 
       {/* ══════════════════════════════════════════════════════════

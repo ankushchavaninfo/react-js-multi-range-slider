@@ -25,6 +25,20 @@ export interface BaseSliderProps {
   showTooltip?: boolean;
   showLabels?: boolean;
   formatLabel?: (value: number) => string;
+  // scale / ruler
+  /** Evenly-spaced text labels rendered below the slider (e.g. day names, month names). */
+  labels?: string[];
+  /**
+   * Show ruler tick marks below the track.
+   * Defaults to `true` when a `labels` array is provided, `false` otherwise.
+   */
+  ruler?: boolean;
+  /**
+   * Number of minor tick marks to insert between each pair of major ticks.
+   * Pass `true` to use the default of 3 minor ticks (4 sub-divisions per section).
+   * Pass `false` or `0` to show major ticks only.
+   */
+  subSteps?: boolean | number;
 }
 
 // ─── Single ────────────────────────────────────────────────────────────────

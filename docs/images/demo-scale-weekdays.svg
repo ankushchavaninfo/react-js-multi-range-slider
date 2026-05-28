@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="85" viewBox="0 0 640 85">
+  <rect width="640" height="85" fill="#f8fafc" rx="8"/>
+
+  <!-- Track (30→610, w=580) -->
+  <rect x="30" y="29" width="580" height="4" rx="2" fill="#dde3ea"/>
+  <!-- Range fill: Mon(1/6)=127 → Fri(5/6)=513 -->
+  <rect x="127" y="29" width="386" height="4" fill="#4a9a4a"/>
+
+  <!-- Thumbs: Mon cx=127, Fri cx=513 -->
+  <circle cx="127" cy="31" r="9" fill="white" stroke="#4a9a4a" stroke-width="2.5"/>
+  <circle cx="513" cy="31" r="9" fill="white" stroke="#4a9a4a" stroke-width="2.5"/>
+
+  <!-- Ruler: 7 major ticks at label positions (6 intervals, spacing≈96.7px) -->
+  <g stroke="#64748b" stroke-width="1" opacity="0.55">
+    <line x1="30"  y1="43" x2="30"  y2="51"/>
+    <line x1="127" y1="43" x2="127" y2="51"/>
+    <line x1="223" y1="43" x2="223" y2="51"/>
+    <line x1="320" y1="43" x2="320" y2="51"/>
+    <line x1="417" y1="43" x2="417" y2="51"/>
+    <line x1="513" y1="43" x2="513" y2="51"/>
+    <line x1="610" y1="43" x2="610" y2="51"/>
+  </g>
+
+  <!-- Scale labels: Sun Mon Tue Wed Thu Fri Sat -->
+  <text x="30"  y="65" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#64748b">Sun</text>
+  <text x="127" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#64748b">Mon</text>
+  <text x="223" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#64748b">Tue</text>
+  <text x="320" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#64748b">Wed</text>
+  <text x="417" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#64748b">Thu</text>
+  <text x="513" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#64748b">Fri</text>
+  <text x="610" y="65" text-anchor="end"    font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#64748b">Sat</text>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="88" viewBox="0 0 640 88">
+  <rect width="640" height="88" fill="#f8fafc" rx="8"/>
+
+  <!-- Track (30→610, w=580) -->
+  <rect x="30" y="29" width="580" height="4" rx="2" fill="#dde3ea"/>
+  <!-- Range fill: 619/719=86.1% (cx≈530) → 719/719=100% (cx=610) -->
+  <rect x="530" y="29" width="80" height="4" fill="#4a9a4a"/>
+
+  <!-- Thumbs: 10:19 cx=530, 12:00 cx=610 -->
+  <circle cx="530" cy="31" r="9" fill="white" stroke="#4a9a4a" stroke-width="2.5"/>
+  <circle cx="610" cy="31" r="9" fill="white" stroke="#4a9a4a" stroke-width="2.5"/>
+
+  <!--
+    Ruler: 13 major ticks for 12 intervals (00:00–12:00), spacing=580/12≈48.3px
+    + 3 minor ticks per interval (at ¼ ½ ¾ = spacing/4≈12.1px apart)
+  -->
+
+  <!-- Major ticks (y1=43 y2=51, 8px) -->
+  <g stroke="#64748b" stroke-width="1" opacity="0.55">
+    <line x1="30"  y1="43" x2="30"  y2="51"/>
+    <line x1="78"  y1="43" x2="78"  y2="51"/>
+    <line x1="127" y1="43" x2="127" y2="51"/>
+    <line x1="175" y1="43" x2="175" y2="51"/>
+    <line x1="223" y1="43" x2="223" y2="51"/>
+    <line x1="272" y1="43" x2="272" y2="51"/>
+    <line x1="320" y1="43" x2="320" y2="51"/>
+    <line x1="368" y1="43" x2="368" y2="51"/>
+    <line x1="417" y1="43" x2="417" y2="51"/>
+    <line x1="465" y1="43" x2="465" y2="51"/>
+    <line x1="513" y1="43" x2="513" y2="51"/>
+    <line x1="562" y1="43" x2="562" y2="51"/>
+    <line x1="610" y1="43" x2="610" y2="51"/>
+  </g>
+
+  <!-- Minor ticks (y1=47 y2=51, 4px, opacity=0.30) -->
+  <g stroke="#64748b" stroke-width="1" opacity="0.30">
+    <!-- 00→01 --> <line x1="42"  y1="47" x2="42"  y2="51"/> <line x1="54"  y1="47" x2="54"  y2="51"/> <line x1="66"  y1="47" x2="66"  y2="51"/>
+    <!-- 01→02 --> <line x1="90"  y1="47" x2="90"  y2="51"/> <line x1="102" y1="47" x2="102" y2="51"/> <line x1="114" y1="47" x2="114" y2="51"/>
+    <!-- 02→03 --> <line x1="139" y1="47" x2="139" y2="51"/> <line x1="151" y1="47" x2="151" y2="51"/> <line x1="163" y1="47" x2="163" y2="51"/>
+    <!-- 03→04 --> <line x1="187" y1="47" x2="187" y2="51"/> <line x1="199" y1="47" x2="199" y2="51"/> <line x1="211" y1="47" x2="211" y2="51"/>
+    <!-- 04→05 --> <line x1="235" y1="47" x2="235" y2="51"/> <line x1="247" y1="47" x2="247" y2="51"/> <line x1="259" y1="47" x2="259" y2="51"/>
+    <!-- 05→06 --> <line x1="284" y1="47" x2="284" y2="51"/> <line x1="296" y1="47" x2="296" y2="51"/> <line x1="308" y1="47" x2="308" y2="51"/>
+    <!-- 06→07 --> <line x1="332" y1="47" x2="332" y2="51"/> <line x1="344" y1="47" x2="344" y2="51"/> <line x1="356" y1="47" x2="356" y2="51"/>
+    <!-- 07→08 --> <line x1="380" y1="47" x2="380" y2="51"/> <line x1="392" y1="47" x2="392" y2="51"/> <line x1="404" y1="47" x2="404" y2="51"/>
+    <!-- 08→09 --> <line x1="429" y1="47" x2="429" y2="51"/> <line x1="441" y1="47" x2="441" y2="51"/> <line x1="453" y1="47" x2="453" y2="51"/>
+    <!-- 09→10 --> <line x1="477" y1="47" x2="477" y2="51"/> <line x1="489" y1="47" x2="489" y2="51"/> <line x1="501" y1="47" x2="501" y2="51"/>
+    <!-- 10→11 --> <line x1="525" y1="47" x2="525" y2="51"/> <line x1="537" y1="47" x2="537" y2="51"/> <line x1="549" y1="47" x2="549" y2="51"/>
+    <!-- 11→12 --> <line x1="574" y1="47" x2="574" y2="51"/> <line x1="586" y1="47" x2="586" y2="51"/> <line x1="598" y1="47" x2="598" y2="51"/>
+  </g>
+
+  <!-- Scale labels: 00:00 … 12:00 (font-size=9 to fit 48px slots) -->
+  <text x="30"  y="63" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">00:00</text>
+  <text x="78"  y="63" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">01:00</text>
+  <text x="127" y="63" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">02:00</text>
+  <text x="175" y="63" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">03:00</text>
+  <text x="223" y="63" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">04:00</text>
+  <text x="272" y="63" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">05:00</text>
+  <text x="320" y="63" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">06:00</text>
+  <text x="368" y="63" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">07:00</text>
+  <text x="417" y="63" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">08:00</text>
+  <text x="465" y="63" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">09:00</text>
+  <text x="513" y="63" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">10:00</text>
+  <text x="562" y="63" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">11:00</text>
+  <text x="610" y="63" text-anchor="end"    font-family="system-ui,-apple-system,sans-serif" font-size="9" fill="#64748b">12:00</text>
+</svg>

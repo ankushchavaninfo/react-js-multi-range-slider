@@ -126,7 +126,7 @@ const VerticalSlider = memo<VerticalSliderProps>(function VerticalSlider({
       />
 
       {showLabels && (
-        <div className="mrs-labels mrs-labels--vertical" style={labelStyle}>
+        <div className="mrs-labels mrs-labels--vertical" aria-hidden="true" style={labelStyle}>
           <span className="mrs-label--top">{fmt(max)}</span>
           <span className="mrs-label--bottom">{fmt(min)}</span>
         </div>
