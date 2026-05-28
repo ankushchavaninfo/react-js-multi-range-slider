@@ -161,24 +161,6 @@ This component supports the following props:
 
 ---
 
-## How to add images to README
-
-1. If you want local images in the repository, create a folder such as `docs/images` and commit images there. Reference them with a relative path in Markdown:
-
-```markdown
-![Example screenshot](docs/images/slider-example.png)
-```
-
-2. Or use hosted images (CDN or your website). Example using a URL:
-
-```markdown
-![Live demo on site](https://www.ankushchavan.in/path/to/image.png)
-```
-
-3. For package README on npm, make sure images are either remote URLs or included in the published package (update `files` in `package.json` if needed).
-
----
-
 ## Development / Contributing
 
 Clone, install and build locally:
@@ -203,6 +185,6 @@ Run the examples in a small CRA or Next app by importing the built lib or using 
 
 ## License
 
-ISC
+MIT
 
 ---
