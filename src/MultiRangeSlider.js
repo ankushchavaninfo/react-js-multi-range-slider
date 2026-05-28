@@ -1,9 +1,23 @@
 /** @format */
 
 import React, { useCallback, useEffect, useState, useRef } from "react";
-import classnames from "classnames";
 import PropTypes from "prop-types";
 import "./multiRangeSlider.css";
+
+const cx = (...values) =>
+  values
+    .flatMap((value) => {
+      if (!value) {
+        return [];
+      }
+
+      if (typeof value === "string") {
+        return [value];
+      }
+
+      return Object.keys(value).filter((key) => value[key]);
+    })
+    .join(" ");
 
 const MultiRangeSlider = ({
   title = "Multi Range Slider",
@@ -167,7 +181,7 @@ const MultiRangeSlider = ({
 
   return (
     <div
-      className={classnames(className || "container", {
+      className={cx(className || "container", {
         "multi-range-slider--disabled": disabled,
       })}
       style={style}
@@ -191,7 +205,7 @@ const MultiRangeSlider = ({
           aria-valuetext={String(currentMin)}
           aria-disabled={disabled}
           onChange={handleMinChange}
-          className={classnames("thumb thumb--zindex-3", {
+          className={cx("thumb thumb--zindex-3", {
             "thumb--zindex-5": currentMin > max - 100,
             "thumb--disabled": disabled,
           })}
@@ -217,7 +231,7 @@ const MultiRangeSlider = ({
           aria-valuetext={String(currentMax)}
           aria-disabled={disabled}
           onChange={handleMaxChange}
-          className={classnames("thumb thumb--zindex-4", {
+          className={cx("thumb thumb--zindex-4", {
             "thumb--disabled": disabled,
           })}
           style={{

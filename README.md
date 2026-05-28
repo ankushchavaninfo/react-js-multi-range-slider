@@ -148,6 +148,111 @@ Disabled example:
 
 ---
 
+## Variants / Recipes
+
+Price filter:
+
+```jsx
+<MultiRangeSlider
+  title="Price"
+  min={0}
+  max={10000}
+  step={100}
+  defaultValue={{ min: 1500, max: 6500 }}
+  minDistance={500}
+  onChange={({ min, max }) => console.log(`$${min} - $${max}`)}
+/>
+```
+
+Percentage selector:
+
+```jsx
+<MultiRangeSlider
+  title="Discount"
+  min={0}
+  max={100}
+  step={5}
+  defaultValue={{ min: 10, max: 50 }}
+  onChange={({ min, max }) => console.log(`${min}% - ${max}%`)}
+/>
+```
+
+Time window:
+
+```jsx
+<MultiRangeSlider
+  title="Available hours"
+  min={0}
+  max={24}
+  step={1}
+  value={hours}
+  onChange={setHours}
+  minDistance={2}
+/>
+```
+
+Rating range with overlapping thumbs:
+
+```jsx
+<MultiRangeSlider
+  title="Rating"
+  min={0}
+  max={5}
+  step={0.5}
+  allowOverlap
+  defaultValue={{ min: 3, max: 5 }}
+  onChange={({ min, max }) => console.log(min, max)}
+/>
+```
+
+Accessible labels:
+
+```jsx
+<MultiRangeSlider
+  title="Salary range"
+  min={30000}
+  max={200000}
+  step={5000}
+  ariaLabelMin="Minimum salary"
+  ariaLabelMax="Maximum salary"
+  onChange={({ min, max }) => console.log(min, max)}
+/>
+```
+
+Callback events:
+
+```jsx
+<MultiRangeSlider
+  min={0}
+  max={100}
+  defaultValue={{ min: 20, max: 80 }}
+  onChange={(value) => console.log("change", value)}
+  onChangeStart={(value) => console.log("start", value)}
+  onChangeComplete={(value) => console.log("complete", value)}
+/>
+```
+
+---
+
+## Package Quality & Security
+
+- Official package name: `react-js-multi-range-sliders`
+- Not affiliated with `multi-range-slider-react`
+- MIT licensed
+- TypeScript declarations included through `lib/MultiRangeSlider.d.ts`
+- No runtime `dependencies`; React, ReactDOM, and PropTypes are peer dependencies
+- Small API surface with documented props and examples
+
+---
+
+## Compared With multi-range-slider-react
+
+`multi-range-slider-react` is another package in the same category. This package focuses on a compact React API, MIT licensing, zero runtime dependencies, controlled/uncontrolled usage, RTL support, callback lifecycle events, ARIA label overrides, and direct style/color customization.
+
+Use this package when you want a small dual-thumb React slider with clear examples, package-owned documentation, TypeScript declarations, and no extra runtime dependency chain.
+
+---
+
 ## Props / Features
 
 This component supports the following props:
