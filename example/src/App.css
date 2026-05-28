@@ -2,7 +2,17 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* Thin page-level scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f8fafc;
+}
+
+html::-webkit-scrollbar        { width: 6px; }
+html::-webkit-scrollbar-track  { background: #f8fafc; }
+html::-webkit-scrollbar-thumb  { background: #cbd5e1; border-radius: 3px; }
+html::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
 body {
   margin: 0;
@@ -204,10 +214,10 @@ a { color: inherit; }
 
 /* ── Docs layout ─────────────────────────────────────────────── */
 
+/* Full-width flex: sidebar always hugs the right viewport edge */
 .docs-layout {
   display: flex;
-  max-width: 1440px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .docs-main {
@@ -219,8 +229,8 @@ a { color: inherit; }
 /* ── Right sidebar ───────────────────────────────────────────── */
 
 .docs-sidebar {
-  width: 228px;
-  min-width: 228px;
+  width: 240px;
+  min-width: 240px;
   flex-shrink: 0;
   position: sticky;
   top: 56px;
@@ -229,13 +239,17 @@ a { color: inherit; }
   border-left: 1px solid #e2e8f0;
   padding: 24px 0 40px;
   background: #fff;
+  /* Thin, themed scrollbar */
   scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 transparent;
+  scrollbar-color: #e2e8f0 transparent;
 }
 
-.docs-sidebar::-webkit-scrollbar       { width: 4px; }
-.docs-sidebar::-webkit-scrollbar-track { background: transparent; }
-.docs-sidebar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+/* Scrollbar only appears on hover for a cleaner look */
+.docs-sidebar::-webkit-scrollbar              { width: 3px; }
+.docs-sidebar::-webkit-scrollbar-track        { background: transparent; }
+.docs-sidebar::-webkit-scrollbar-thumb        { background: transparent; border-radius: 3px; transition: background 0.2s; }
+.docs-sidebar:hover::-webkit-scrollbar-thumb  { background: #cbd5e1; }
+.docs-sidebar:hover::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
 .sidebar-heading {
   padding: 0 20px 10px;
@@ -392,7 +406,15 @@ a { color: inherit; }
   font-size: 12px;
   line-height: 1.6;
   align-self: start;
+  /* Thin horizontal scrollbar styled for dark background */
+  scrollbar-width: thin;
+  scrollbar-color: #334155 #0f172a;
 }
+
+.code-block::-webkit-scrollbar        { height: 3px; }
+.code-block::-webkit-scrollbar-track  { background: #0f172a; border-radius: 0 0 8px 8px; }
+.code-block::-webkit-scrollbar-thumb  { background: #334155; border-radius: 3px; }
+.code-block::-webkit-scrollbar-thumb:hover { background: #475569; }
 
 .code-block code {
   display: block;
