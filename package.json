@@ -1,6 +1,6 @@
 {
   "name": "react-js-multi-range-sliders",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Ankush Chavan",
   "license": "MIT",
   "description": "React range slider components — dual-thumb, single, vertical, multi-point & circular. Ruler, tooltips, 4 themes, RTL support, TypeScript, zero dependencies.",

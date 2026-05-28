@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.2.0...v1.2.1) (2026-05-28)
+
+
+### Bug Fixes
+
+* **tooltipLayout:** resolve overlap when thumbs are near a container edge ([501b83c](https://github.com/ankushchavaninfo/react-js-multi-range-slider/commit/501b83cf8e74bee9a155da6f6b5f8d6a8ea68911))
+
 # [1.2.0](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.1.0...v1.2.0) (2026-05-28)
 
 
