@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.0.2...v1.1.0) (2026-05-28)
+
+
+### Bug Fixes
+
+* **ci:** enable npm publish via OIDC Trusted Publishing ([ea9ccb0](https://github.com/ankushchavaninfo/react-js-multi-range-slider/commit/ea9ccb0dfb78ec32004b1ef606bd386dc5a08da0))
+* **SingleSlider:** show max as right label instead of current value ([6352a59](https://github.com/ankushchavaninfo/react-js-multi-range-slider/commit/6352a59071a21fc92b7bc99d6d4e54f025d6733a))
+
+
+### Features
+
+* add logo, favicon and update example app meta ([662cc8f](https://github.com/ankushchavaninfo/react-js-multi-range-slider/commit/662cc8f252e7d3038e21bdc8d0d43811d362a30b))
+
 ## [1.0.2](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.0.1...v1.0.2) (2026-05-28)
 
 
