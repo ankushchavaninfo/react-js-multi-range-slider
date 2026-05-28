@@ -8,8 +8,10 @@ import React, {
 } from "react";
 import type { RangeSliderProps, RangeValue } from "../types";
 import { cx } from "../utils/cx";
-import { clamp, thumbOffset, toPercent } from "../utils/percent";
+import { clamp, toPercent } from "../utils/percent";
 import { useChangeListeners } from "../hooks/useChangeListeners";
+import { useTooltipLayout } from "../hooks/useTooltipLayout";
+import SliderScale from "./SliderScale";
 import "../styles/index.css";
 
 const RangeSlider = memo<RangeSliderProps>(function RangeSlider({
@@ -39,6 +41,9 @@ const RangeSlider = memo<RangeSliderProps>(function RangeSlider({
   showTooltip = false,
   showLabels = true,
   formatLabel,
+  labels,
+  ruler,
+  subSteps,
   ariaLabelMin,
   ariaLabelMax,
 }) {
@@ -105,6 +110,19 @@ const RangeSlider = memo<RangeSliderProps>(function RangeSlider({
   const pMin = getPercent(cMin);
   const pMax = getPercent(cMax);
 
+  // In RTL the visual order is reversed: max value appears on the left,
+  // min value on the right.  Flip percents so the push-apart algorithm
+  // always works in left-to-right visual space.
+  const tipPercents = isRtl ? [100 - pMax, 100 - pMin] : [pMin, pMax];
+  const tipLabels   = isRtl ? [fmt(cMax), fmt(cMin)]   : [fmt(cMin), fmt(cMax)];
+  const { slots: tipSlots, containerRef: tipContainerRef } = useTooltipLayout(tipPercents, tipLabels);
+
+  // Scale: number of major tick sections when no labels array is given
+  const scaleSections = labels
+    ? labels.length - 1
+    : Math.max(1, Math.min(20, Math.round((max - min) / step)));
+  const showRuler = ruler ?? (labels != null && labels.length > 0);
+
   const cssVars = {
     ...(trackColor ? { "--mrs-track-bg": trackColor } : {}),
     ...(rangeColor ? { "--mrs-range-bg": rangeColor } : {}),
@@ -133,19 +151,14 @@ const RangeSlider = memo<RangeSliderProps>(function RangeSlider({
       </span>
 
       {showTooltip && (
-        <div className="mrs-tooltips" aria-hidden="true">
-          <span
-            className="mrs-tooltip"
-            style={{ left: `calc(${pMin}% + ${thumbOffset(pMin)}px)` }}
-          >
-            {fmt(cMin)}
-          </span>
-          <span
-            className="mrs-tooltip"
-            style={{ left: `calc(${pMax}% + ${thumbOffset(pMax)}px)` }}
-          >
-            {fmt(cMax)}
-          </span>
+        <div ref={tipContainerRef} className="mrs-tooltips" aria-hidden="true">
+          {tipSlots.map((slot, i) =>
+            slot.visible ? (
+              <span key={i} className="mrs-tooltip" style={{ left: slot.left }}>
+                {slot.label}
+              </span>
+            ) : null
+          )}
         </div>
       )}
 
@@ -203,6 +216,15 @@ const RangeSlider = memo<RangeSliderProps>(function RangeSlider({
           <span className="mrs-label--left">{fmt(isRtl ? cMax : cMin)}</span>
           <span className="mrs-label--right">{fmt(isRtl ? cMin : cMax)}</span>
         </div>
+      )}
+
+      {(showRuler || (labels && labels.length > 0)) && (
+        <SliderScale
+          labels={labels}
+          ruler={showRuler}
+          subSteps={subSteps}
+          sections={scaleSections}
+        />
       )}
     </div>
   );

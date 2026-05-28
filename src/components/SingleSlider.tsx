@@ -3,6 +3,7 @@ import type { SingleSliderProps } from "../types";
 import { cx } from "../utils/cx";
 import { thumbOffset, toPercent } from "../utils/percent";
 import { useChangeListeners } from "../hooks/useChangeListeners";
+import SliderScale from "./SliderScale";
 import "../styles/index.css";
 
 const SingleSlider = memo<SingleSliderProps>(function SingleSlider({
@@ -29,6 +30,9 @@ const SingleSlider = memo<SingleSliderProps>(function SingleSlider({
   showTooltip = false,
   showLabels = true,
   formatLabel,
+  labels,
+  ruler,
+  subSteps,
   ariaLabel,
 }) {
   const fillRef = useRef<HTMLDivElement>(null);
@@ -71,6 +75,11 @@ const SingleSlider = memo<SingleSliderProps>(function SingleSlider({
     ...(labelColor ? { "--mrs-label-color": labelColor } : {}),
   } as React.CSSProperties;
 
+  const scaleSections = labels
+    ? labels.length - 1
+    : Math.max(1, Math.min(20, Math.round((max - min) / step)));
+  const showRuler = ruler ?? (labels != null && labels.length > 0);
+
   return (
     <div
       className={cx("mrs-slider", `mrs-theme-${theme}`, { "mrs-slider--disabled": disabled }, className)}
@@ -78,7 +87,7 @@ const SingleSlider = memo<SingleSliderProps>(function SingleSlider({
       aria-disabled={disabled}
     >
       {showTooltip && (
-        <div className="mrs-tooltips">
+        <div className="mrs-tooltips" aria-hidden="true">
           <span
             className="mrs-tooltip"
             style={{ left: `calc(${percent}% + ${thumbOffset(percent)}px)` }}
@@ -113,10 +122,19 @@ const SingleSlider = memo<SingleSliderProps>(function SingleSlider({
       />
 
       {showLabels && (
-        <div className="mrs-labels" style={labelStyle}>
+        <div className="mrs-labels" aria-hidden="true" style={labelStyle}>
           <span className="mrs-label--left">{fmt(min)}</span>
           <span className="mrs-label--right">{fmt(max)}</span>
         </div>
+      )}
+
+      {(showRuler || (labels && labels.length > 0)) && (
+        <SliderScale
+          labels={labels}
+          ruler={showRuler}
+          subSteps={subSteps}
+          sections={scaleSections}
+        />
       )}
     </div>
   );

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="88" viewBox="0 0 640 88">
+  <rect width="640" height="88" fill="#f8fafc" rx="8"/>
+
+  <!-- Track (30→610, w=580) -->
+  <rect x="30" y="36" width="580" height="4" rx="2" fill="#dde3ea"/>
+  <!-- Range fill: 25%=175 → 75%=465 -->
+  <rect x="175" y="36" width="290" height="4" fill="#4a9a4a"/>
+
+  <!-- Thumbs -->
+  <circle cx="175" cy="38" r="9" fill="white" stroke="#4a9a4a" stroke-width="2.5"/>
+  <circle cx="465" cy="38" r="9" fill="white" stroke="#4a9a4a" stroke-width="2.5"/>
+
+  <!-- Ruler: 21 major ticks, spacing=29px (20 sections for min=0 max=100 step=1 → cap 20) -->
+  <g stroke="#64748b" stroke-width="1">
+    <line x1="30"  y1="49" x2="30"  y2="57" opacity="0.55"/>
+    <line x1="59"  y1="49" x2="59"  y2="57" opacity="0.55"/>
+    <line x1="88"  y1="49" x2="88"  y2="57" opacity="0.55"/>
+    <line x1="117" y1="49" x2="117" y2="57" opacity="0.55"/>
+    <line x1="146" y1="49" x2="146" y2="57" opacity="0.55"/>
+    <line x1="175" y1="49" x2="175" y2="57" opacity="0.55"/>
+    <line x1="204" y1="49" x2="204" y2="57" opacity="0.55"/>
+    <line x1="233" y1="49" x2="233" y2="57" opacity="0.55"/>
+    <line x1="262" y1="49" x2="262" y2="57" opacity="0.55"/>
+    <line x1="291" y1="49" x2="291" y2="57" opacity="0.55"/>
+    <line x1="320" y1="49" x2="320" y2="57" opacity="0.55"/>
+    <line x1="349" y1="49" x2="349" y2="57" opacity="0.55"/>
+    <line x1="378" y1="49" x2="378" y2="57" opacity="0.55"/>
+    <line x1="407" y1="49" x2="407" y2="57" opacity="0.55"/>
+    <line x1="436" y1="49" x2="436" y2="57" opacity="0.55"/>
+    <line x1="465" y1="49" x2="465" y2="57" opacity="0.55"/>
+    <line x1="494" y1="49" x2="494" y2="57" opacity="0.55"/>
+    <line x1="523" y1="49" x2="523" y2="57" opacity="0.55"/>
+    <line x1="552" y1="49" x2="552" y2="57" opacity="0.55"/>
+    <line x1="581" y1="49" x2="581" y2="57" opacity="0.55"/>
+    <line x1="610" y1="49" x2="610" y2="57" opacity="0.55"/>
+  </g>
+
+  <!-- Min / max labels -->
+  <text x="30"  y="73" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#94a3b8">0</text>
+  <text x="610" y="73" text-anchor="end" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#94a3b8">100</text>
+</svg>

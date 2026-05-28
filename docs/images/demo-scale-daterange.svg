@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="85" viewBox="0 0 640 85">
+  <rect width="640" height="85" fill="#f8fafc" rx="8"/>
+
+  <!-- Track (30→610, w=580) -->
+  <rect x="30" y="29" width="580" height="4" rx="2" fill="#dde3ea"/>
+  <!-- Range fill: day 22 (6%)=65 → day 364 (99.7%)=608 -->
+  <rect x="65" y="29" width="543" height="4" fill="#4a9a4a"/>
+
+  <!-- Thumbs: day 22 cx=65, day 364 cx=608 -->
+  <circle cx="65"  cy="31" r="9" fill="white" stroke="#4a9a4a" stroke-width="2.5"/>
+  <circle cx="608" cy="31" r="9" fill="white" stroke="#4a9a4a" stroke-width="2.5"/>
+
+  <!--
+    Ruler: 12 major ticks for 11 intervals (months), spacing=580/11≈52.7px
+    Positions: 30, 83, 135, 188, 241, 294, 346, 399, 452, 505, 557, 610
+  -->
+  <g stroke="#64748b" stroke-width="1" opacity="0.55">
+    <line x1="30"  y1="43" x2="30"  y2="51"/>
+    <line x1="83"  y1="43" x2="83"  y2="51"/>
+    <line x1="135" y1="43" x2="135" y2="51"/>
+    <line x1="188" y1="43" x2="188" y2="51"/>
+    <line x1="241" y1="43" x2="241" y2="51"/>
+    <line x1="294" y1="43" x2="294" y2="51"/>
+    <line x1="346" y1="43" x2="346" y2="51"/>
+    <line x1="399" y1="43" x2="399" y2="51"/>
+    <line x1="452" y1="43" x2="452" y2="51"/>
+    <line x1="505" y1="43" x2="505" y2="51"/>
+    <line x1="557" y1="43" x2="557" y2="51"/>
+    <line x1="610" y1="43" x2="610" y2="51"/>
+  </g>
+
+  <!-- Scale labels: Jan … Dec -->
+  <text x="30"  y="65" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b">Jan</text>
+  <text x="83"  y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b">Feb</text>
+  <text x="135" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b">Mar</text>
+  <text x="188" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b">Apr</text>
+  <text x="241" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b">May</text>
+  <text x="294" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b">Jun</text>
+  <text x="346" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b">Jul</text>
+  <text x="399" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b">Aug</text>
+  <text x="452" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b">Sep</text>
+  <text x="505" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b">Oct</text>
+  <text x="557" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b">Nov</text>
+  <text x="610" y="65" text-anchor="end"    font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="#64748b">Dec</text>
+</svg>

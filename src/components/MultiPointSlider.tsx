@@ -1,8 +1,9 @@
 import React, { memo, useCallback, useEffect, useId, useRef, useState } from "react";
 import type { MultiPointSliderProps } from "../types";
 import { cx } from "../utils/cx";
-import { clamp, thumbOffset, toPercent } from "../utils/percent";
+import { clamp, toPercent } from "../utils/percent";
 import { useChangeListeners } from "../hooks/useChangeListeners";
+import { useTooltipLayout } from "../hooks/useTooltipLayout";
 import "../styles/index.css";
 
 const MultiPointSlider = memo<MultiPointSliderProps>(function MultiPointSlider({
@@ -74,6 +75,10 @@ const MultiPointSlider = memo<MultiPointSliderProps>(function MultiPointSlider({
     width: Math.max(getPercent(current[i + 1]) - getPercent(v), 0),
   }));
 
+  const tipPercents = current.map(v => getPercent(v));
+  const tipLabels   = current.map(v => fmt(v));
+  const { slots: tipSlots, containerRef: tipContainerRef } = useTooltipLayout(tipPercents, tipLabels);
+
   return (
     <div
       role="group"
@@ -86,19 +91,14 @@ const MultiPointSlider = memo<MultiPointSliderProps>(function MultiPointSlider({
       </span>
 
       {showTooltip && (
-        <div className="mrs-tooltips" aria-hidden="true">
-          {current.map((v, i) => {
-            const p = getPercent(v);
-            return (
-              <span
-                key={i}
-                className="mrs-tooltip"
-                style={{ left: `calc(${p}% + ${thumbOffset(p)}px)` }}
-              >
-                {fmt(v)}
+        <div ref={tipContainerRef} className="mrs-tooltips" aria-hidden="true">
+          {tipSlots.map((slot, i) =>
+            slot.visible ? (
+              <span key={i} className="mrs-tooltip" style={{ left: slot.left }}>
+                {slot.label}
               </span>
-            );
-          })}
+            ) : null
+          )}
         </div>
       )}
 

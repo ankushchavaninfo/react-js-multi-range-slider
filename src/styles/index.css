@@ -206,6 +206,8 @@
   position: relative;
   height: 26px;
   pointer-events: none;
+  /* Allow push-apart tooltips to escape the container bounds */
+  overflow: visible;
 }
 
 .mrs-tooltip {
@@ -221,6 +223,10 @@
   white-space:  nowrap;
   transition:   left var(--mrs-transition);
   pointer-events: none;
+  /* Prevent layout shifts from overflowing the page horizontally */
+  max-width: calc(100vw - 16px);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mrs-tooltip::after {
@@ -230,6 +236,50 @@
   transform: translateX(-50%);
   border: 4px solid transparent;
   border-top-color: var(--mrs-tooltip-bg);
+}
+
+/* ── Ruler (tick marks) ─────────────────────────────────────── */
+.mrs-ruler {
+  position: relative;
+  height: 8px;
+  margin-top: 3px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Minor tick (default — short) */
+.mrs-ruler__tick {
+  position: absolute;
+  width: 1px;
+  height: 4px;
+  bottom: 0;
+  background: var(--mrs-label-color);
+  opacity: 0.3;
+  transform: translateX(-50%);
+}
+
+/* Major tick — taller and more opaque */
+.mrs-ruler__tick--major {
+  height: 8px;
+  opacity: 0.55;
+}
+
+/* ── Scale labels (custom labels array) ─────────────────────── */
+.mrs-scale {
+  position: relative;
+  height: 18px;
+  margin-top: 2px;
+  pointer-events: none;
+  font-size: 11px;
+  color: var(--mrs-label-color);
+  overflow: visible;
+}
+
+.mrs-scale__label {
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  line-height: 1;
 }
 
 /* ============================================================
