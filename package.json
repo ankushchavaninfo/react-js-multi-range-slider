@@ -1,6 +1,6 @@
 {
   "name": "react-js-multi-range-sliders",
-  "version": "0.3.0",
+  "version": "1.3.0",
   "author": "Ankush Chavan",
   "license": "MIT",
   "description": "React Smart Range Selectors — single, dual-thumb, vertical, multi-point, and circular sliders with 4 themes, tooltips, TypeScript, and zero runtime dependencies.",

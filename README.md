@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <p align="center">
-  <h1 align="center"><code>react-js-multi-range-sliders</code></h1>
+  <img src="docs/images/banner.svg" alt="react-js-multi-range-sliders — 5 slider types, 4 themes, TypeScript, zero deps" width="768"/>
 </p>
 
 <p align="center">
@@ -11,16 +11,21 @@
   <a href="https://github.com/ankushchavaninfo/react-js-multi-range-slider/blob/main/LICENSE">
     <img src="https://img.shields.io/npm/l/react-js-multi-range-sliders.svg" alt="MIT License" />
   </a>
-  <img src="https://img.shields.io/badge/TypeScript-ready-blue.svg" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/tree--shakeable-ESM-green.svg" alt="Tree-shakeable" />
-  <img src="https://img.shields.io/badge/zero-runtime--deps-orange.svg" alt="Zero deps" />
+  <img src="https://img.shields.io/badge/TypeScript-ready-3178c6.svg" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/ESM%20%2B%20CJS-tree--shakeable-22c55e.svg" alt="Tree-shakeable" />
+  <img src="https://img.shields.io/badge/zero-runtime--deps-f97316.svg" alt="Zero deps" />
 </p>
 
 <p align="center">
-  <strong>React Smart Range Selectors</strong> — single, dual-thumb, vertical,
-  multi-point, and circular sliders in one package.
-  Four built-in themes, tooltips, RTL, keyboard navigation, full TypeScript,
-  and zero runtime dependencies.
+  <strong>React Smart Range Selectors</strong> — single, dual-thumb, vertical, multi-point,
+  and circular sliders in one package. Four built-in themes, tooltips, RTL, full keyboard
+  navigation, complete TypeScript support, and zero runtime dependencies.
+</p>
+
+<p align="center">
+  <a href="https://codesandbox.io/s/github/ankushchavaninfo/react-js-multi-range-slider/tree/main/example" target="_blank" rel="noopener noreferrer">
+    <img alt="Open in CodeSandbox" src="https://codesandbox.io/static/img/play-codesandbox.svg" height="32"/>
+  </a>
 </p>
 
 ---
@@ -63,7 +68,7 @@ import {
   CircularSlider,
 } from "react-js-multi-range-sliders";
 
-// Per-component import — no bundler tree-shaking needed
+// Per-component import — zero bundler tree-shaking needed
 import RangeSlider    from "react-js-multi-range-sliders/RangeSlider";
 import CircularSlider from "react-js-multi-range-sliders/CircularSlider";
 ```
@@ -73,6 +78,10 @@ Styles are **injected automatically** when a component is imported — no separa
 ---
 
 ## RangeSlider
+
+<p align="center">
+  <img src="docs/images/demo-range.svg" alt="RangeSlider — dual thumb with tooltips" width="640"/>
+</p>
 
 ```tsx
 import { useState } from "react";
@@ -98,7 +107,7 @@ function PriceFilter() {
 }
 ```
 
-### All props
+### Props
 
 | Prop | Type | Default | Description |
 |---|---|---|---|
@@ -133,6 +142,10 @@ function PriceFilter() {
 
 ## SingleSlider
 
+<p align="center">
+  <img src="docs/images/demo-single.svg" alt="SingleSlider — single thumb with tooltip" width="640"/>
+</p>
+
 ```tsx
 import { SingleSlider } from "react-js-multi-range-sliders";
 
@@ -148,7 +161,7 @@ import { SingleSlider } from "react-js-multi-range-sliders";
 />
 ```
 
-Same props as `RangeSlider` minus the range-specific ones. Additional prop:
+Same base props as `RangeSlider`. Additional prop:
 
 | Prop | Type | Default | Description |
 |---|---|---|---|
@@ -158,13 +171,17 @@ Same props as `RangeSlider` minus the range-specific ones. Additional prop:
 
 ## VerticalSlider
 
+<p align="center">
+  <img src="docs/images/demo-vertical.svg" alt="VerticalSlider — three channels equalizer" width="360"/>
+</p>
+
 ```tsx
 import { VerticalSlider } from "react-js-multi-range-sliders";
 
 function Equalizer() {
   const [bass, setBass] = useState(60);
-  const [mid,  setMid]  = useState(45);
-  const [high, setHigh] = useState(70);
+  const [mid,  setMid]  = useState(40);
+  const [high, setHigh] = useState(75);
 
   return (
     <div style={{ display: "flex", gap: 24 }}>
@@ -182,11 +199,15 @@ Additional prop:
 |---|---|---|---|
 | `height` | `number \| string` | `200` | Track height (px or CSS string) |
 
-Cross-browser strategy: `writing-mode: vertical-lr` (Chrome/Safari/Edge) + `orient="vertical"` attribute (Firefox).
+Cross-browser: `writing-mode: vertical-lr` (Chrome / Safari / Edge) + `orient="vertical"` attribute (Firefox).
 
 ---
 
 ## MultiPointSlider
+
+<p align="center">
+  <img src="docs/images/demo-multipoint.svg" alt="MultiPointSlider — four thumbs with coloured segments" width="640"/>
+</p>
 
 Three or more thumbs. `onChange` receives a **sorted** `number[]`.
 
@@ -194,7 +215,7 @@ Three or more thumbs. `onChange` receives a **sorted** `number[]`.
 import { MultiPointSlider } from "react-js-multi-range-sliders";
 
 function PriceTiers() {
-  const [stops, setStops] = useState([20, 45, 70, 90]);
+  const [stops, setStops] = useState([16, 38, 62, 82]);
 
   return (
     <MultiPointSlider
@@ -223,9 +244,11 @@ function PriceTiers() {
 
 ## CircularSlider
 
-SVG radial knob. 270° arc from bottom-left to bottom-right.
+<p align="center">
+  <img src="docs/images/demo-circular.svg" alt="CircularSlider — four themes side by side" width="580"/>
+</p>
 
-**Mouse, touch, and keyboard** supported — click the knob and use
+SVG radial knob spanning a 270° arc. **Mouse, touch, and keyboard** supported:
 `←` `→` `↑` `↓` `Home` `End` `PageUp` `PageDown`.
 
 ```tsx
@@ -234,7 +257,7 @@ import { CircularSlider } from "react-js-multi-range-sliders";
 <CircularSlider
   min={0}
   max={100}
-  defaultValue={60}
+  defaultValue={65}
   onChange={(v) => console.log(v)}
   size={160}
   strokeWidth={14}
@@ -269,7 +292,9 @@ import { CircularSlider } from "react-js-multi-range-sliders";
 
 ## Themes
 
-Four built-in themes, available on every component:
+<p align="center">
+  <img src="docs/images/demo-themes.svg" alt="Four built-in themes — default, material, neumorphic, dark" width="640"/>
+</p>
 
 | `theme` | Description |
 |---|---|
@@ -376,13 +401,13 @@ The package ships **CommonJS + ESM** dual output. Modern bundlers
 
 ```
 lib/
-  index.js / .mjs          — full library (CJS / ESM)
-  RangeSlider.js / .mjs    — per-component
+  index.js / .mjs            — full library (CJS / ESM)
+  RangeSlider.js / .mjs      — per-component subpath imports
   SingleSlider.js / .mjs
   VerticalSlider.js / .mjs
   MultiPointSlider.js / .mjs
   CircularSlider.js / .mjs
-  *.d.ts / *.d.mts          — TypeScript declarations (auto-generated)
+  *.d.ts / *.d.mts            — TypeScript declarations (auto-generated)
 ```
 
 `"sideEffects": ["**/*.css"]` is declared so bundlers preserve the style-injection
@@ -401,6 +426,16 @@ import MultiRangeSlider from "react-js-multi-range-sliders";
 <MultiRangeSlider min={0} max={100} onChange={fn} />
 <MultiRangeSlider type="single" min={0} max={100} onChange={fn} />
 ```
+
+---
+
+## Live demo
+
+Try all five components in the browser:
+
+<a href="https://codesandbox.io/s/github/ankushchavaninfo/react-js-multi-range-slider/tree/main/example" target="_blank" rel="noopener noreferrer">
+  <img alt="Open in CodeSandbox" src="https://codesandbox.io/static/img/play-codesandbox.svg" height="32"/>
+</a>
 
 ---
 
