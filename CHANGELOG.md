@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/ankushchavaninfo/react-js-multi-range-slider/compare/v1.0.0...v1.0.1) (2026-05-28)
+
+
+### Bug Fixes
+
+* **release:** keep example dependency in sync with released version ([d18a27e](https://github.com/ankushchavaninfo/react-js-multi-range-slider/commit/d18a27ed221c6e0771da783e3890a178836241ad))
+
 # 1.0.0 (2026-05-28)
 
 
