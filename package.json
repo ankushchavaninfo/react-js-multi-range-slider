@@ -2,7 +2,7 @@
   "name": "react-js-multi-range-sliders",
   "version": "0.2.0",
   "author": "Ankush Chavan",
-  "license": "MIT",
+  "license": "ISC",
   "description": "Multi range slider with react js",
   "homepage": "https://github.com/ankushchavaninfo/react-js-multi-range-slider#readme",
   "main": "./lib/MultiRangeSlider.js",

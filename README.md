@@ -20,6 +20,10 @@
 </p>
 
 <p align="center">
+  <strong>License:</strong> ISC
+</p>
+
+<p align="center">
   React Js MultiRangeSlider component used to select a multi value from a range of values.
 </p>
 
@@ -207,6 +211,6 @@ npm start
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+ISC. See [LICENSE](LICENSE).
 
 ---
