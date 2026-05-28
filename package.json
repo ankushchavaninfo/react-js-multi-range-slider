@@ -1,9 +1,10 @@
 {
-  "name": "react-js-multi-range-sliders",
-  "version": "0.1.4",
+  "name": "react-multi-range-slider",
+  "version": "0.1.5",
   "author": "Ankush Chavan",
   "license": "ISC",
   "description": "Multi range slider with react js",
+  "homepage": "https://www.ankushchavan.in/",
   "main": "./lib/MultiRangeSlider.js",
   "repository": {
     "type": "git",
@@ -17,13 +18,25 @@
   },
   "keywords": [
     "react",
+    "react-component",
     "react-range-slider",
-    "html-range",
-    "react-range",
-    "range",
-    "multi-range-slider",
+    "react-slider",
+    "range-input",
+    "dual-thumb",
     "double-range-slider",
-    "range-slider"
+    "multi-range-slider",
+    "range-selector",
+    "rtl",
+    "accessible",
+    "aria",
+    "slider",
+    "ui"
+  ],
+  "files": [
+    "lib",
+    "src",
+    "docs",
+    "README.md"
   ],
   "peerDependencies": {
     "prop-types": "^15.8.1",
