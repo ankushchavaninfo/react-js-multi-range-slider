@@ -4,15 +4,21 @@
   "author": "Ankush Chavan",
   "license": "MIT",
   "description": "Multi range slider with react js",
-  "homepage": "https://www.ankushchavan.in/",
+  "homepage": "https://github.com/ankushchavan0411/react-js-multi-range-slider#readme",
   "main": "./lib/MultiRangeSlider.js",
   "exports": "./lib/MultiRangeSlider.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ankushchavaninfo/react-js-multi-range-slider"
+    "url": "git+https://github.com/ankushchavan0411/react-js-multi-range-slider.git"
   },
   "scripts": {
     "build": "webpack",
+    "prepublishOnly": "npm run build",
+    "pack:check": "npm pack --dry-run",
+    "publish:public": "npm publish --access public",
     "version": "npm run build && git add lib",
     "release:patch": "npm version patch && git push origin main --follow-tags",
     "release:minor": "npm version minor && git push origin main --follow-tags",
@@ -20,7 +26,7 @@
     "release:beta": "npm version prerelease --preid=beta && git push origin main --follow-tags"
   },
   "bugs": {
-    "url": "https://github.com/ankushchavaninfo/react-js-multi-range-slider/issues"
+    "url": "https://github.com/ankushchavan0411/react-js-multi-range-slider/issues"
   },
   "keywords": [
     "react",

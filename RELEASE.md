@@ -54,3 +54,23 @@ To release an exact version number:
 npm version 0.4.0
 git push origin main --follow-tags
 ```
+
+## Check package contents
+
+Before publishing, confirm what npm will upload:
+
+```bash
+npm run pack:check
+```
+
+The package should include `lib`, `README.md`, `LICENSE`, `package.json`, and
+docs assets. It should not include `src`, `example`, or `node_modules`.
+
+## Publish to npm
+
+After the version commit and tag are pushed, publish the package:
+
+```bash
+npm login
+npm run publish:public
+```
