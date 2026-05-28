@@ -24,19 +24,19 @@
 }
 
 .slider__track {
-  background-color: #ced4da;
+  background-color: var(--track-color, #ced4da);
   width: 100%;
   z-index: 1;
 }
 
 .slider__range {
-  background-color: #9fe5e1;
+  background-color: var(--range-color, #9fe5e1);
   z-index: 2;
 }
 
 .slider__left-value,
 .slider__right-value {
-  color: #dee2e6;
+  color: var(--label-color, #dee2e6);
   font-size: 12px;
   margin-top: 20px;
 }
@@ -76,9 +76,13 @@
   z-index: 5;
 }
 
+.thumb--disabled {
+  opacity: 0.6;
+}
+
 /* For Chrome browsers */
 .thumb::-webkit-slider-thumb {
-  background-color: #f1f5f7;
+  background-color: var(--thumb-color, #f1f5f7);
   border: none;
   border-radius: 50%;
   box-shadow: 0 0 1px 1px #ced4da;
@@ -92,7 +96,7 @@
 
 /* For Firefox browsers */
 .thumb::-moz-range-thumb {
-  background-color: #f1f5f7;
+  background-color: var(--thumb-color, #f1f5f7);
   border: none;
   border-radius: 50%;
   box-shadow: 0 0 1px 1px #ced4da;
