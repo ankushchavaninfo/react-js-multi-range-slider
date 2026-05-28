@@ -12,7 +12,12 @@
     "url": "https://github.com/ankushchavaninfo/react-js-multi-range-slider"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "version": "npm run build && git add lib",
+    "release:patch": "npm version patch && git push origin main --follow-tags",
+    "release:minor": "npm version minor && git push origin main --follow-tags",
+    "release:major": "npm version major && git push origin main --follow-tags",
+    "release:beta": "npm version prerelease --preid=beta && git push origin main --follow-tags"
   },
   "bugs": {
     "url": "https://github.com/ankushchavaninfo/react-js-multi-range-slider/issues"
