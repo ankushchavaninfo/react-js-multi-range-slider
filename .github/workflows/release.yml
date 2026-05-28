@@ -1,0 +1,57 @@
+name: Release
+
+# Fires every time a commit lands on main (i.e. a PR is merged).
+# semantic-release reads the commits since the last tag, decides whether
+# a new version is needed, bumps package.json, writes CHANGELOG.md,
+# creates a git tag, publishes to npm, and creates a GitHub Release — all
+# automatically.
+#
+# Commit-type → version bump rules (Conventional Commits):
+#   fix:              → patch   (0.3.0 → 0.3.1)
+#   feat:             → minor   (0.3.0 → 0.4.0)
+#   BREAKING CHANGE:  → major   (0.3.0 → 1.0.0)
+#
+# Required secrets (Settings → Secrets → Actions):
+#   GITHUB_TOKEN  — provided automatically by GitHub Actions
+#   NPM_TOKEN     — create at https://www.npmjs.com/settings/<user>/tokens
+#                   (Automation token, "Publish" scope)
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write       # create tags + commits
+  issues: write         # comment on issues
+  pull-requests: write  # comment on PRs
+  id-token: write       # npm provenance (optional but good practice)
+
+jobs:
+  release:
+    name: Semantic Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (full history for semantic-release)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # needs full history to find last tag
+          persist-credentials: false
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build library
+        run: npm run build
+
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
