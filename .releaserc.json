@@ -9,15 +9,23 @@
     ],
     [
       "@semantic-release/npm",
+      { "npmPublish": true, "pkgRoot": "." }
+    ],
+    [
+      "@semantic-release/exec",
       {
-        "npmPublish": true,
-        "pkgRoot": "."
+        "prepareCmd": "npm pkg set dependencies.react-js-multi-range-sliders=${nextRelease.version} --prefix example"
       }
     ],
     [
       "@semantic-release/git",
       {
-        "assets": ["package.json", "package-lock.json", "CHANGELOG.md"],
+        "assets": [
+          "package.json",
+          "package-lock.json",
+          "CHANGELOG.md",
+          "example/package.json"
+        ],
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
     ],
