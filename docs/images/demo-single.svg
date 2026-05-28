@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="82" viewBox="0 0 640 82">
+  <rect width="640" height="82" fill="#f8fafc" rx="8"/>
+
+  <!-- Track -->
+  <rect x="30" y="38" width="580" height="5" rx="2.5" fill="#e2e8f0"/>
+  <!-- Fill 0 → 65% (30+0.65*580=407) -->
+  <rect x="30" y="38" width="377" height="5" rx="2.5" fill="#7c3aed"/>
+
+  <!-- Tooltip -->
+  <rect x="387" y="10" width="40" height="20" rx="4" fill="#1e293b"/>
+  <text x="407" y="23" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="600" fill="white">65%</text>
+  <polygon points="403,30 411,30 407,35" fill="#1e293b"/>
+
+  <!-- Thumb -->
+  <circle cx="407" cy="40.5" r="10" fill="white" stroke="#7c3aed" stroke-width="2.5"/>
+
+  <!-- Labels -->
+  <text x="30" y="62" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#94a3b8">0</text>
+  <text x="407" y="62" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#475569">65%</text>
+  <text x="610" y="62" text-anchor="end" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#94a3b8">100</text>
+</svg>

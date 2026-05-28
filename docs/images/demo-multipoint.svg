@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="86" viewBox="0 0 640 86">
+  <rect width="640" height="86" fill="#f8fafc" rx="8"/>
+
+  <!-- Track base -->
+  <rect x="30" y="38" width="580" height="5" rx="2.5" fill="#e2e8f0"/>
+
+  <!-- 4 thumbs at 16%(122.8), 38%(250.4), 62%(389.6), 82%(505.6) -->
+  <!-- Segment 1→2: blue -->
+  <rect x="122.8" y="38" width="127.6" height="5" rx="0" fill="#3b82f6"/>
+  <!-- Segment 2→3: purple -->
+  <rect x="250.4" y="38" width="139.2" height="5" rx="0" fill="#7c3aed"/>
+  <!-- Segment 3→4: teal -->
+  <rect x="389.6" y="38" width="116" height="5" rx="0" fill="#0f766e"/>
+
+  <!-- Tooltip values -->
+  <rect x="103" y="12" width="40" height="18" rx="4" fill="#1e293b"/>
+  <text x="123" y="24" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="600" fill="white">$16</text>
+  <polygon points="119,30 127,30 123,35" fill="#1e293b"/>
+
+  <rect x="231" y="12" width="40" height="18" rx="4" fill="#1e293b"/>
+  <text x="251" y="24" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="600" fill="white">$38</text>
+  <polygon points="247,30 255,30 251,35" fill="#1e293b"/>
+
+  <rect x="370" y="12" width="40" height="18" rx="4" fill="#1e293b"/>
+  <text x="390" y="24" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="600" fill="white">$62</text>
+  <polygon points="386,30 394,30 390,35" fill="#1e293b"/>
+
+  <rect x="486" y="12" width="40" height="18" rx="4" fill="#1e293b"/>
+  <text x="506" y="24" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="600" fill="white">$82</text>
+  <polygon points="502,30 510,30 506,35" fill="#1e293b"/>
+
+  <!-- Thumbs -->
+  <circle cx="122.8" cy="40.5" r="9" fill="white" stroke="#3b82f6" stroke-width="2.5"/>
+  <circle cx="250.4" cy="40.5" r="9" fill="white" stroke="#7c3aed" stroke-width="2.5"/>
+  <circle cx="389.6" cy="40.5" r="9" fill="white" stroke="#0f766e" stroke-width="2.5"/>
+  <circle cx="505.6" cy="40.5" r="9" fill="white" stroke="#b45309" stroke-width="2.5"/>
+
+  <!-- Labels -->
+  <text x="30"  y="64" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#94a3b8">$0</text>
+  <text x="610" y="64" text-anchor="end" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#94a3b8">$100</text>
+  <text x="320" y="64" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#475569">$16 · $38 · $62 · $82</text>
+</svg>

@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="230" viewBox="0 0 768 230">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="768" height="230" fill="url(#bg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="384" y="38" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="20" font-weight="700" fill="#0f172a">react-js-multi-range-sliders</text>
+
+  <!-- Tagline -->
+  <text x="384" y="60" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#475569">5 slider types · 4 themes · TypeScript · Tree-shakeable · Zero runtime deps</text>
+
+  <!-- Badge chips -->
+  <rect x="224" y="71" width="54" height="18" rx="9" fill="#dbeafe"/>
+  <text x="251" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#2563eb">ESM+CJS</text>
+  <rect x="284" y="71" width="66" height="18" rx="9" fill="#dcfce7"/>
+  <text x="317" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#16a34a">TypeScript</text>
+  <rect x="356" y="71" width="58" height="18" rx="9" fill="#fef3c7"/>
+  <text x="385" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#b45309">MIT</text>
+  <rect x="420" y="71" width="64" height="18" rx="9" fill="#f3e8ff"/>
+  <text x="452" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#7c3aed">Accessible</text>
+  <rect x="490" y="71" width="54" height="18" rx="9" fill="#fce7f3"/>
+  <text x="517" y="83" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#be185d">RTL</text>
+
+  <!-- ── 5 component cards ───────────────────────────────────────── -->
+  <!-- Card spacing: 5 × 124 + 4 × 12 = 668, start x = (768-668)/2 = 50 -->
+
+  <!-- Card 1: RangeSlider (x=50) -->
+  <rect x="50" y="102" width="124" height="112" rx="8" fill="white" filter="url(#sh)"/>
+  <text x="112" y="118" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#64748b" text-transform="uppercase" letter-spacing="0.05em">RANGE</text>
+  <!-- Track -->
+  <rect x="66" y="135" width="92" height="4" rx="2" fill="#e2e8f0"/>
+  <!-- Fill 28%–70% -->
+  <rect x="91.76" y="135" width="38.44" height="4" rx="2" fill="#3b82f6"/>
+  <!-- Min thumb (28%: 66+0.28*92=91.76) -->
+  <circle cx="91.76" cy="137" r="7" fill="white" stroke="#3b82f6" stroke-width="2"/>
+  <!-- Max thumb (70%: 66+0.70*92=130.4) -->
+  <circle cx="130.4" cy="137" r="7" fill="white" stroke="#3b82f6" stroke-width="2"/>
+  <!-- Tooltip min -->
+  <rect x="80" y="118" width="24" height="13" rx="3" fill="#1e293b"/>
+  <text x="92" y="128" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="white" font-weight="600">28</text>
+  <!-- Tooltip max -->
+  <rect x="119" y="118" width="24" height="13" rx="3" fill="#1e293b"/>
+  <text x="131" y="128" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="white" font-weight="600">70</text>
+  <!-- Labels -->
+  <text x="66" y="152" font-family="system-ui,sans-serif" font-size="9" fill="#94a3b8">0</text>
+  <text x="158" y="152" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="#94a3b8">100</text>
+  <!-- Card label -->
+  <text x="112" y="203" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#1e293b">RangeSlider</text>
+  <text x="112" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#94a3b8">dual thumb</text>
+
+  <!-- Card 2: SingleSlider (x=186) -->
+  <rect x="186" y="102" width="124" height="112" rx="8" fill="white" filter="url(#sh)"/>
+  <text x="248" y="118" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#64748b">SINGLE</text>
+  <!-- Track -->
+  <rect x="202" y="135" width="92" height="4" rx="2" fill="#e2e8f0"/>
+  <!-- Fill 0–62% -->
+  <rect x="202" y="135" width="57.04" height="4" rx="2" fill="#7c3aed"/>
+  <!-- Thumb (62%: 202+0.62*92=259.04) -->
+  <circle cx="259.04" cy="137" r="7" fill="white" stroke="#7c3aed" stroke-width="2"/>
+  <!-- Tooltip -->
+  <rect x="247" y="118" width="24" height="13" rx="3" fill="#1e293b"/>
+  <text x="259" y="128" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="white" font-weight="600">62</text>
+  <!-- Labels -->
+  <text x="202" y="152" font-family="system-ui,sans-serif" font-size="9" fill="#94a3b8">0</text>
+  <text x="294" y="152" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="#94a3b8">100</text>
+  <text x="248" y="203" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#1e293b">SingleSlider</text>
+  <text x="248" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#94a3b8">single thumb</text>
+
+  <!-- Card 3: VerticalSlider (x=322) -->
+  <rect x="322" y="102" width="124" height="112" rx="8" fill="white" filter="url(#sh)"/>
+  <text x="384" y="118" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#64748b">VERTICAL</text>
+  <!-- 3 channels: x=355, 384, 413 -->
+  <!-- Channel 1: 60% fill (from bottom: 120-120*0.6=72 to 120) -->
+  <rect x="352" y="122" width="4" height="66" rx="2" fill="#e2e8f0"/>
+  <rect x="352" y="122+66*(1-0.6)" width="4" height="66*0.6" rx="2" fill="#2563eb"/>
+  <rect x="352" y="162.4" width="4" height="25.6" rx="2" fill="#2563eb"/>
+  <circle cx="354" cy="162" r="6" fill="white" stroke="#2563eb" stroke-width="1.5"/>
+  <!-- Channel 2: 40% -->
+  <rect x="382" y="122" width="4" height="66" rx="2" fill="#e2e8f0"/>
+  <rect x="382" y="148.4" width="4" height="39.6" rx="2" fill="#7c3aed"/>
+  <circle cx="384" cy="148" r="6" fill="white" stroke="#7c3aed" stroke-width="1.5"/>
+  <!-- Channel 3: 75% -->
+  <rect x="412" y="122" width="4" height="66" rx="2" fill="#e2e8f0"/>
+  <rect x="412" y="139.5" width="4" height="48.5" rx="2" fill="#0f766e"/>
+  <circle cx="414" cy="139" r="6" fill="white" stroke="#0f766e" stroke-width="1.5"/>
+  <text x="384" y="203" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#1e293b">VerticalSlider</text>
+  <text x="384" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#94a3b8">vertical</text>
+
+  <!-- Card 4: MultiPointSlider (x=458) -->
+  <rect x="458" y="102" width="124" height="112" rx="8" fill="white" filter="url(#sh)"/>
+  <text x="520" y="118" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#64748b">MULTI</text>
+  <!-- Track -->
+  <rect x="474" y="135" width="92" height="4" rx="2" fill="#e2e8f0"/>
+  <!-- 3 thumbs: 20%(492.4), 50%(520), 80%(547.6) -->
+  <!-- Segments -->
+  <rect x="492.4" y="135" width="27.6" height="4" rx="0" fill="#3b82f6"/>
+  <rect x="520" y="135" width="27.6" height="4" rx="0" fill="#7c3aed"/>
+  <!-- Thumb fills -->
+  <rect x="474" y="135" width="18.4" height="4" rx="0" fill="#e2e8f0"/>
+  <rect x="547.6" y="135" width="18.4" height="4" rx="0" fill="#e2e8f0"/>
+  <circle cx="492.4" cy="137" r="6" fill="white" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="520" cy="137" r="6" fill="white" stroke="#7c3aed" stroke-width="2"/>
+  <circle cx="547.6" cy="137" r="6" fill="white" stroke="#0f766e" stroke-width="2"/>
+  <!-- Labels -->
+  <text x="474" y="152" font-family="system-ui,sans-serif" font-size="9" fill="#94a3b8">0</text>
+  <text x="566" y="152" text-anchor="end" font-family="system-ui,sans-serif" font-size="9" fill="#94a3b8">100</text>
+  <text x="520" y="203" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#1e293b">MultiPoint</text>
+  <text x="520" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#94a3b8">N thumbs</text>
+
+  <!-- Card 5: CircularSlider (x=594) -->
+  <rect x="594" y="102" width="124" height="112" rx="8" fill="white" filter="url(#sh)"/>
+  <text x="656" y="118" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#64748b">CIRCULAR</text>
+  <!-- Circle center: cx=656, cy=152, r=28 -->
+  <!-- Track arc: 135° to 45°, large-arc=1, sweep=1 -->
+  <!-- Start(135°): 656-28*0.7071=636.2, 152+28*0.7071=171.8 -->
+  <!-- End(45°): 656+19.8=675.8, 171.8 -->
+  <path d="M 636.2 171.8 A 28 28 0 1 1 675.8 171.8" fill="none" stroke="#e2e8f0" stroke-width="8" stroke-linecap="round"/>
+  <!-- Progress at 70%: angle=135+189=324°, x=656+28*cos(324°)=656+28*0.809=678.6, y=152+28*sin(324°)=152-16.45=135.5, 189°>180→large=1 -->
+  <path d="M 636.2 171.8 A 28 28 0 1 1 678.6 135.6" fill="none" stroke="#3b82f6" stroke-width="8" stroke-linecap="round"/>
+  <!-- Thumb at progress end -->
+  <circle cx="678.6" cy="135.6" r="6" fill="white" stroke="#3b82f6" stroke-width="2"/>
+  <!-- Value label -->
+  <text x="656" y="157" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#1e293b">70</text>
+  <text x="656" y="203" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#1e293b">CircularSlider</text>
+  <text x="656" y="214" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="#94a3b8">SVG radial</text>
+</svg>
