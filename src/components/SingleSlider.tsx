@@ -115,7 +115,7 @@ const SingleSlider = memo<SingleSliderProps>(function SingleSlider({
       {showLabels && (
         <div className="mrs-labels" style={labelStyle}>
           <span className="mrs-label--left">{fmt(min)}</span>
-          <span className="mrs-label--right">{fmt(current)}</span>
+          <span className="mrs-label--right">{fmt(max)}</span>
         </div>
       )}
     </div>
