@@ -95,6 +95,14 @@
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+  /* Offset added to thumb top when tooltip container is present */
+  --mrs-tooltip-h: 0px;
+}
+
+/* When showTooltip=true the 26px .mrs-tooltips container sits above the track,
+   shifting the track down — thumb top must compensate for the same offset. */
+.mrs-slider--with-tooltip {
+  --mrs-tooltip-h: 26px;
 }
 
 /* ── Track ──────────────────────────────────────────────────── */
@@ -125,7 +133,7 @@
   -moz-appearance: none;
   appearance: none;
   position: absolute;
-  top: calc(12px - var(--mrs-thumb-size) / 2 + var(--mrs-track-h) / 2);
+  top: calc(12px + var(--mrs-tooltip-h) - var(--mrs-thumb-size) / 2 + var(--mrs-track-h) / 2);
   left: 0;
   width: 100%;
   height: var(--mrs-thumb-size);
@@ -208,6 +216,8 @@
   pointer-events: none;
   /* Allow push-apart tooltips to escape the container bounds */
   overflow: visible;
+  /* Render above the absolutely-positioned thumb inputs (z-index 3-5) */
+  z-index: 10;
 }
 
 .mrs-tooltip {

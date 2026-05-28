@@ -83,7 +83,7 @@ const MultiPointSlider = memo<MultiPointSliderProps>(function MultiPointSlider({
     <div
       role="group"
       aria-labelledby={groupId}
-      className={cx("mrs-slider", `mrs-theme-${theme}`, { "mrs-slider--disabled": disabled }, className)}
+      className={cx("mrs-slider", `mrs-theme-${theme}`, { "mrs-slider--disabled": disabled, "mrs-slider--with-tooltip": showTooltip }, className)}
       style={{ ...cssVars, ...style }}
     >
       <span id={groupId} className="mrs-sr-only">

@@ -82,7 +82,7 @@ const SingleSlider = memo<SingleSliderProps>(function SingleSlider({
 
   return (
     <div
-      className={cx("mrs-slider", `mrs-theme-${theme}`, { "mrs-slider--disabled": disabled }, className)}
+      className={cx("mrs-slider", `mrs-theme-${theme}`, { "mrs-slider--disabled": disabled, "mrs-slider--with-tooltip": showTooltip }, className)}
       style={{ ...cssVars, ...style }}
       aria-disabled={disabled}
     >

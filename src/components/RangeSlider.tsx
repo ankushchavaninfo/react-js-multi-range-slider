@@ -140,7 +140,7 @@ const RangeSlider = memo<RangeSliderProps>(function RangeSlider({
       className={cx(
         "mrs-slider",
         `mrs-theme-${theme}`,
-        { "mrs-slider--disabled": disabled },
+        { "mrs-slider--disabled": disabled, "mrs-slider--with-tooltip": showTooltip },
         className,
       )}
       style={{ ...cssVars, ...style }}
